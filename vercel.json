@@ -2,7 +2,7 @@
     "version": 2,
     "builds": [
         {
-            "src": "loja/wsgi.py",
+            "src": "Criador_de_portfolios/wsgi.py",
             "use": "@vercel/python",
             "config": {
                 "runtime": "python3.10.0"
@@ -23,7 +23,7 @@
         },
         {
             "src": "/(.*)",
-            "dest": "loja/wsgi.py"
+            "dest": "Criador_de_portfolios/wsgi.py"
         }
     ]
 }
