@@ -1,0 +1,20 @@
+{% extends 'index.html' %}
+{% load static %}
+
+{% block inicio %}
+    <a href="{% url 'index' %}">Inicio</a>
+    {% endblock %}
+    {% block template %}
+    <a href="http://127.0.0.1:8000/#template">Templates</a>
+    {% endblock %}
+
+    {% block conteudo %}
+    <section class="excluir">
+            <form class="fomulario-excluir" action="" method="POST">
+                <p>{{ user }} deseja excluir o anuncio: <b>{{ object }}</b>?</p>
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit">Excluir</button>
+            </form>
+    </section>
+{% endblock %}

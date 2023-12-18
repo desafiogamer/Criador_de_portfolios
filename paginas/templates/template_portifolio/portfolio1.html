@@ -1,0 +1,527 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portifólio | {{ user }}</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="{% static 'css/style -portfolioOne.css' %}">
+</head>
+
+<body>
+    <form action="" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <header id="header" class="header">
+            <h1 class="logo"><i class="bi bi-person-circle"></i><span><</span> {{ form.logo }} <span>/></span><span class="animate" style="--i:.1;"></span></h1>
+            <div class="bi bi-list" id="menu-icon"></div>
+            <nav id="nav" class="navbar">
+                <a href="#home" class="active">Inicio</a>
+                <a href="#about">Sobre</a>
+                <a href="#portifolio">Projetos</a>
+                <a href="#skills">Habilidades</a>
+                <a href="#contact">Contato <span>{ }</span></a>
+                <span class="active-nav"></span>  
+            </nav>
+        </header>
+
+        <section class="home show-animate" id="home">
+            <div class="home-content">
+                <div class="separacao">
+                    <h1>Olá, sou</h1>
+                    <div class="text-animate"></div>
+                    {{ form.desenvolvedor }}
+                    <p><label>Resumo sobre voce:</label><br>{{ form.resumo_sobre }}</p>
+                    <p><label>Alinhar container a:</label><br>{{ form.alinharTexto }}</p>
+                </div>
+                <div class="home-sci">
+                    <a><i class="bi bi-linkedin"></i></a>
+                    <a><i class="bi bi-github"></i></a>
+                    <a><i class="bi bi-instagram"></i></a>
+                    <span class="circle-spin"></span>
+                </div>
+
+                <div class="linha-pai">
+                    <span class="linha"></span>
+                    <span class="linha"></span>
+                    <span class="linha"></span>
+                    <span class="linha"></span>
+                    <div class="btn-box btns">
+                        <a class="btn">Baixar CV</a>
+                    </div>
+                </div>
+
+                <div class="perguntas cover">
+                    <label>Link do linkdin <i class="bi bi-arrow-down-short"></i></label>
+                    {{ form.linkdin }}
+                    <br>
+                    <br>
+                    <label>Link do github <i class="bi bi-arrow-down-short"></i></label>
+                    {{ form.github }}
+                    <br>
+                    <br>
+                    <label>Link do instagram <i class="bi bi-arrow-down-short"></i></label>
+                    {{ form.instagran }}
+                    <br>
+                    <br>
+                    <label>Link do curriculo <i class="bi bi-arrow-down-short"></i></label>
+                    {{ form.curriculo }}
+                    <br>
+                    <div class="ou">
+                        <label>Escolha a imagem de fundo <i class="bi bi-arrow-down-short"></i></label>
+                        <div class="Botao-carro">
+                            {{ form.backgroundInicio }}
+                            <i class="bi bi-file-earmark-plus-fill"></i>
+                        </div>
+                        <h1>OU</h1>
+                        <label>Cor de fundo EX: #000000 <i class="bi bi-arrow-down-short"></i></label>
+                        {{ form.backgroundColorInicio }}     
+                    </div>                 
+                </div>
+            </div>
+
+            <div class="perguntas">
+                <label>Link do linkdin <i class="bi bi-arrow-down-short"></i></label>
+                {{ form.linkdin }}
+                <br>
+                <br>
+                <label>Link do github <i class="bi bi-arrow-down-short"></i></label>
+                {{ form.github }}
+                <br>
+                <br>
+                <label>Link do instagram <i class="bi bi-arrow-down-short"></i></label>
+                {{ form.instagran }}
+                <br>
+                <br>
+                <label>Link do curriculo <i class="bi bi-arrow-down-short"></i></label>
+                {{ form.curriculo }}
+                <br>
+                <div class="ou">
+                    <label>Escolha a imagem de fundo <i class="bi bi-arrow-down-short"></i></label>
+                    <div class="Botao-carro">
+                        {{ form.backgroundInicio }}
+                        <i class="bi bi-file-earmark-plus-fill"></i>
+                    </div>
+                    <h1>OU</h1>
+                    <label>Cor de fundo EX: #000000 <i class="bi bi-arrow-down-short"></i></label>
+                    {{ form.backgroundColorInicio }}
+                </div>
+            </div>
+        </section>
+
+        <section class="about" id="about">
+            <h2 class="heading">Sobre <span>mim( )</span></h2>
+            <div class="liga-pai">
+                <span class="liga"></span>
+                <span class="liga"></span>
+            </div>
+            <div class="about-img">
+                <img src="{% static 'img/fundo-hacker.png' %}" alt="">
+                <span class="circle-spin"></span>
+            </div>
+            <div class="img-perfil">
+                <label>Escolha a imagem de perfil <i class="bi bi-arrow-down-short"></i></label>
+                <div class="Botao-carro">
+                    {{ form.fotoSobre }}
+                    <i class="bi bi-file-earmark-plus-fill"></i>
+                </div>
+            </div>
+            
+            <div class="about-content">
+                <h3><span>{</span>Automatico!<span>}</span></h3>
+                <p><label>Digite sobre voce <i class="bi bi-arrow-down-short"></i></label></p>
+                {{ form.sobreVoce }}
+            </div>
+            <div class="backgroundProjetos">
+                <label>imagem de fundo <i class="bi bi-arrow-down-short"></i></label>
+                <div class="Botao-carro">
+                    {{ form.backgroundSobre }}
+                    <i class="bi bi-file-earmark-plus-fill"></i>
+                </div>
+                <h1>OU</h1>
+                <label>Cor de fundo EX: #000000 <i class="bi bi-arrow-down-short"></i></label>
+                {{ form.backgroundColorSobre }}
+            </div>
+        </section>
+
+        <section class="portifolio" id="portifolio">
+            <h2 class="heading">Meus <span>Projetos( )</span></h2>
+            <div class="Projetos-container">
+                <div class="formulario-projetos">
+                    <label>Titulo do projeto: <i class="bi bi-arrow-down-short"></i></label>
+                    <br>
+                    {{ form.tituloTwo }}
+                    <br>
+                    <br>
+                    <label>Escolha a imagem do projeto <i class="bi bi-arrow-down-short"></i></label>
+                    <div class="Botao-carro">
+                        {{ form.imagemProjetoOne }}
+                        <i class="bi bi-file-earmark-plus-fill"></i>
+                    </div>
+                    <br>
+                    <br>
+                    <label>Resumo descrição projeto: <i class="bi bi-arrow-down-short"></i></label>
+                    <br>
+                    {{ form.DescricaoProjetoOne }}
+                    <br>
+                    <br>
+                    <label>Link do projeto <i class="bi bi-arrow-down-short"></i></label>
+                    <br>
+                    {{ form.LinkProjetoOne }}
+                </div>
+                
+                <div class="formulario-projetos">
+                    <label>Titulo do projeto: <i class="bi bi-arrow-down-short"></i></label>
+                    <br>
+                    {{ form.tituloOne }}
+                    <br>
+                    <br>
+                    <label>Escolha a imagem do projeto <i class="bi bi-arrow-down-short"></i></label>
+                    <div class="Botao-carro">
+                        {{ form.imagemProjetoTwo }}
+                        <i class="bi bi-file-earmark-plus-fill"></i>
+                    </div>
+                    <br>
+                    <br>
+                    <label>Resumo descrição projeto: <i class="bi bi-arrow-down-short"></i></label>
+                    <br>
+                    {{ form.DescricaoProjetoTwo }}
+                    <br>
+                    <br>
+                    <label>Link do projeto <i class="bi bi-arrow-down-short"></i></label>
+                    <br>
+                    {{ form.LinkProjetoTwo }}
+                </div>
+                              
+                <div class="formulario-projetos">
+                    <label>Titulo do projeto: <i class="bi bi-arrow-down-short"></i></label>
+                    <br>
+                    {{ form.tituloThre }}
+                    <br>
+                    <br>
+                    <label>Escolha a imagem do projeto <i class="bi bi-arrow-down-short"></i></label>
+                    <div class="Botao-carro">
+                        {{ form.imagemProjetoThre }}
+                        <i class="bi bi-file-earmark-plus-fill"></i>
+                    </div>
+                    <br>
+                    <br>
+                    <label>Resumo descrição projeto: <i class="bi bi-arrow-down-short"></i></label>
+                    <br>
+                    {{ form.DescricaoProjetoThre }}
+                    <br>
+                    <br>
+                    <label>Link do projeto <i class="bi bi-arrow-down-short"></i></label>
+                    <br>
+                    {{ form.LinkProjetoThre }}
+                </div>
+                            
+                <div class="formulario-projetos">
+                    <label>Titulo do projeto: <i class="bi bi-arrow-down-short"></i></label>
+                    <br>
+                    {{ form.tituloFour }}
+                    <br>
+                    <br>
+                    <label>Escolha a imagem do projeto <i class="bi bi-arrow-down-short"></i></label>
+                    <div class="Botao-carro">
+                        {{ form.imagemProjetoFour }}
+                        <i class="bi bi-file-earmark-plus-fill"></i>
+                    </div>
+                    <br>
+                    <br>
+                    <label>Resumo descrição projeto: <i class="bi bi-arrow-down-short"></i></label>
+                    <br>
+                    {{ form.DescricaoProjetoFour }}
+                    <br>
+                    <br>
+                    <label>Link do projeto <i class="bi bi-arrow-down-short"></i></label>
+                    <br>
+                    {{ form.LinkProjetoFour }}
+                </div>
+            </div>
+
+            <div class="backgroundProjetos">
+                <label>imagem de fundo <i class="bi bi-arrow-down-short"></i></label>
+                <div class="Botao-carro">
+                    {{ form.backgroundProjetos }}
+                    <i class="bi bi-file-earmark-plus-fill"></i>
+                </div>
+                <h1>OU</h1>
+                <label>Cor de fundo EX: #000000 <i class="bi bi-arrow-down-short"></i></label>
+                {{ form.backgroundColorProjetos }}
+            </div>
+        </section>
+
+        <section class="skills" id="skills">
+            <h2 class="heading">Habili<span>dades( )</span></h2>
+            <div class="pista">
+                <div class="carro">
+                    <div class="molde">
+                        <div class="farol"></div>
+                    </div>
+                    <div class="teto">
+                        <div class="janela"></div>
+                    </div>
+                    <div class="roda1">
+                        <div class="aro1"></div>
+                        <div class="aro2"></div>
+                    </div>
+                    <div class="roda2">
+                        <div class="aro3"></div>
+                        <div class="aro4"></div>
+                    </div>
+                    <div class="porta">
+                        <div class="macaneta"></div>
+                    </div>
+                    <div class="luz"></div>
+                </div>
+            </div>
+
+            <div>
+                <div class="experience-habilidade">
+                    <div class="experiencia-box">
+                        <label>Nome da habilidade <i class="bi bi-arrow-down-short"></i></label>
+                        {{ form.linguagensProgramação1 }}
+                        <br>
+                        <label>Icone da linguagem <i class="bi bi-arrow-down-short"></i></label>
+                        <div class="Botao-carro">
+                            {{ form.img1 }}
+                            <i class="bi bi-file-earmark-plus-fill"></i>
+                        </div>
+                        <br>
+                        <label>Experiencia</label>
+                        {{ form.nivelExperiencia1 }}
+                    </div>
+                        
+                    <div class="experiencia-box">
+                        <label>Nome da habilidade <i class="bi bi-arrow-down-short"></i></label>
+                        {{ form.linguagensProgramação2 }}
+                        <br>
+                        <label>Icone da linguagem <i class="bi bi-arrow-down-short"></i></label>
+                        <div class="Botao-carro">
+                            {{ form.img2 }}
+                            <i class="bi bi-file-earmark-plus-fill"></i>
+                        </div>
+                        <br>
+                        <label>Experiencia</label>
+                        {{ form.nivelExperiencia2 }}
+                    </div>
+                        
+                    <div class="experiencia-box">
+                        <label>Nome da habilidade <i class="bi bi-arrow-down-short"></i></label>
+                        {{ form.linguagensProgramação3 }}
+                        <br>
+                        <label>Icone da linguagem <i class="bi bi-arrow-down-short"></i></label>
+                        <div class="Botao-carro">
+                            {{ form.img3 }}
+                            <i class="bi bi-file-earmark-plus-fill"></i>
+                        </div>
+                        <br>
+                        <label>Experiencia</label>
+                        {{ form.nivelExperiencia3 }}
+                    </div>
+                        
+                    <div class="experiencia-box">
+                        <label>Nome da habilidade <i class="bi bi-arrow-down-short"></i></label>
+                        {{ form.linguagensProgramação4 }}
+                        <br>
+                        <label>Icone da linguagem <i class="bi bi-arrow-down-short"></i></label>
+                        <div class="Botao-carro">
+                            {{ form.img4 }}
+                            <i class="bi bi-file-earmark-plus-fill"></i>
+                        </div>
+                        <br>
+                        <label>Experiencia</label>
+                        {{ form.nivelExperiencia4 }}
+                    </div>
+                        
+                    <div class="experiencia-box">
+                        <label>Nome da habilidade <i class="bi bi-arrow-down-short"></i></label>
+                        {{ form.linguagensProgramação5 }}
+                        <br>
+                        <label>Icone da linguagem <i class="bi bi-arrow-down-short"></i></label>
+                        <div class="Botao-carro">
+                            {{ form.img5 }}
+                            <i class="bi bi-file-earmark-plus-fill"></i>
+                        </div>
+                        <br>
+                        <label>Experiencia</label>
+                        {{ form.nivelExperiencia5 }}
+                    </div>
+                       
+                    <div class="experiencia-box">
+                        <label>Nome da habilidade <i class="bi bi-arrow-down-short"></i></label>
+                        {{ form.linguagensProgramação6 }}
+                        <br>
+                        <label>Icone da linguagem <i class="bi bi-arrow-down-short"></i></label>
+                        <div class="Botao-carro">
+                            {{ form.img6 }}
+                            <i class="bi bi-file-earmark-plus-fill"></i>
+                        </div>
+                        <br>
+                        <label>Experiencia</label>
+                        {{ form.nivelExperiencia6 }}
+                    </div>
+                </div>
+
+                <div class="maisHabilidades">
+                    <a id="maisHabilidades">Mais habilidades</a>
+                </div>
+
+                <div class="experience-habilidade esconder">
+                    <div class="experiencia-box">
+                        <label>Nome da habilidade <i class="bi bi-arrow-down-short"></i></label>
+                        {{ form.linguagensProgramação7 }}
+                        <br>
+                        <label>Icone da linguagem <i class="bi bi-arrow-down-short"></i></label>
+                        <div class="Botao-carro">
+                            {{ form.img7 }}
+                            <i class="bi bi-file-earmark-plus-fill"></i>
+                        </div>
+                        <br>
+                        <label>Experiencia</label>
+                        {{ form.nivelExperiencia7 }}
+                    </div>
+                
+                    <div class="experiencia-box">
+                        <label>Nome da habilidade <i class="bi bi-arrow-down-short"></i></label>
+                        {{ form.linguagensProgramação8 }}
+                        <br>
+                        <label>Icone da linguagem <i class="bi bi-arrow-down-short"></i></label>
+                        <div class="Botao-carro">
+                            {{ form.img8 }}
+                            <i class="bi bi-file-earmark-plus-fill"></i>
+                        </div>
+                        <br>
+                        <label>Experiencia</label>
+                        {{ form.nivelExperiencia8 }}
+                    </div>
+                
+                    <div class="experiencia-box">
+                        <label>Nome da habilidade <i class="bi bi-arrow-down-short"></i></label>
+                        {{ form.linguagensProgramação9 }}
+                        <br>
+                        <label>Icone da linguagem <i class="bi bi-arrow-down-short"></i></label>
+                        <div class="Botao-carro">
+                            {{ form.img9 }}
+                            <i class="bi bi-file-earmark-plus-fill"></i>
+                        </div>
+                        <br>
+                        <label>Experiencia</label>
+                        {{ form.nivelExperiencia9 }}
+                    </div>
+                
+                    <div class="experiencia-box">
+                        <label>Nome da habilidade <i class="bi bi-arrow-down-short"></i></label>
+                        {{ form.linguagensProgramação10 }}
+                        <br>
+                        <label>Icone da linguagem <i class="bi bi-arrow-down-short"></i></label>
+                        <div class="Botao-carro">
+                            {{ form.img10 }}
+                            <i class="bi bi-file-earmark-plus-fill"></i>
+                        </div>
+                        <br>
+                        <label>Experiencia</label>
+                        {{ form.nivelExperiencia10 }}
+                    </div>
+                
+                    <div class="experiencia-box">
+                        <label>Nome da habilidade <i class="bi bi-arrow-down-short"></i></label>
+                        {{ form.linguagensProgramação11 }}
+                        <br>
+                        <label>Icone da linguagem <i class="bi bi-arrow-down-short"></i></label>
+                        <div class="Botao-carro">
+                            {{ form.img11 }}
+                            <i class="bi bi-file-earmark-plus-fill"></i>
+                        </div>
+                        <br>
+                        <label>Experiencia</label>
+                        {{ form.nivelExperiencia11 }}
+                    </div>
+                
+                    <div class="experiencia-box">
+                        <label>Nome da habilidade <i class="bi bi-arrow-down-short"></i></label>
+                        {{ form.linguagensProgramação12 }}
+                        <br>
+                        <label>Icone da linguagem <i class="bi bi-arrow-down-short"></i></label>
+                        <div class="Botao-carro">
+                            {{ form.img12 }}
+                            <i class="bi bi-file-earmark-plus-fill"></i>
+                        </div>
+                        <br>
+                        <label>Experiencia</label>
+                        {{ form.nivelExperiencia12 }}
+                    </div>
+                </div>
+            </div>
+            <div class="backgroundProjetos">
+                <label>imagem de fundo <i class="bi bi-arrow-down-short"></i></label>               
+                <div class="Botao-carro">
+                    {{ form.backgroundHabilidades }}
+                    <i class="bi bi-file-earmark-plus-fill"></i>
+                </div>
+                <h1>OU</h1>
+                <label>Cor de fundo EX: #000000 <i class="bi bi-arrow-down-short"></i></label>
+                {{ form.backgroundColorHabilidades }}
+            </div>
+        </section>
+        
+        <section class="contact" id="contact">
+            <h2 class="heading">Entre em <span>Contato <i class="bi bi-envelope-at"></i></span></h2>
+            <div class="contatos-form">
+                <label>Seu Email <i class="bi bi-arrow-down-short"></i></label>
+                {{ form.gmail }}
+                <label>Link do Gmail <i class="bi bi-arrow-down-short"></i></label>
+                {{ form.linkGmail }}
+                <label>Seu numero de telefone <i class="bi bi-arrow-down-short"></i></label>
+                {{ form.numero }}
+                <label>Link do whatsapp<i class="bi bi-arrow-down-short"></i></label>
+                {{ form.linkWhatsap }}           
+            </div>
+            <div class="backgroundProjetos">
+                <label>imagem de fundo <i class="bi bi-arrow-down-short"></i></label>             
+                <div class="Botao-carro">
+                    {{ form.backgroundContact }}
+                    <i class="bi bi-file-earmark-plus-fill"></i>
+                </div>
+                <h1>OU</h1>
+                <label>Cor de fundo EX: #000000 <i class="bi bi-arrow-down-short"></i></label>
+                {{ form.backgroundColorContact }}
+            </div>
+            <div class="backgroundProjetos">
+                <label>Cor primaria das letras EX: #000000<i class="bi bi-arrow-down-short"></i></label>
+                {{ form.corPrimaria }}
+                <h1>E</h1>
+                <label>Cor Secundaria das letras EX: #000000 <i class="bi bi-arrow-down-short"></i></label>
+                {{ form.corSecundaria }}
+            </div>
+        </section>
+
+        <div class="btn-form-container">
+            <button class="btn-form" type="submit">Salvar portfolio</button>
+        </div>
+    </form>
+
+    <footer class="footer">
+        <div class="footer-text">
+            <p>©Site desenvolvido por João vitor gentil da silva</p>
+        </div>
+        <div class="footer-iconTop">
+            <a class="bi bi-arrow-up" href="#home"></a>
+        </div>
+    </footer>
+    
+    <script src="{% static 'js/portifolio1/scroll.js' %}"></script>
+    <script src="{% static 'js/portifolio1/modals.js' %}"></script>
+    <script src="{% static 'js/portifolio1/header-marcação.js' %}"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.js"></script>
+    <script>
+        $('#id_numero').mask('(00) 0 0000-0000')
+    </script>
+</body>
+    <script src="{% static 'js/jscolor/colorfield.js' %}"></script>
+    <script src="{% static 'js/jscolor/jscolor.js' %}"></script>
+    <script src="{% static 'js/jscolor/jscolor.min.js' %}"></script>
+</html>

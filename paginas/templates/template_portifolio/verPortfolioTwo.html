@@ -1,0 +1,412 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>Inicio</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+
+    <link href="{% static static 'img-portifolio2/favicon.png' %}" rel="icon">
+    <link href="{% static 'img-portifolio2/apple-touch-icon.png' %}" rel="apple-touch-icon">
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
+    <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'vendor/boxicons/css/boxicons.min.css' %}" rel="stylesheet">
+    <link href="{% static 'vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
+    <link href="{% static 'vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/style-portfolioTwo.css' %}">
+    <style type="text/css">
+
+        .nav-menu a:hover i,
+        .nav-menu .active i,
+        .nav-menu .active:focus i,
+        .nav-menu li:hover>a i {
+            color: {{ obj.CorSecundaria }};
+        }
+
+        #header .profile .social-links a:hover {
+            background: {{ obj.CorSecundaria }};
+        }
+
+        #main1{
+            background-image: url({{ obj.imagemDeFundo.url }});
+        }
+
+        #main {
+            background: {{ obj.CorDeFundo }};
+        }
+
+        .skills{
+            background: {{ obj.CorDeFundo }};
+        }
+
+        .portfolio{
+            background: {{ obj.CorDeFundo }};
+        }
+
+        .contact .info {
+            background-color: {{ obj.CorDeFundo }};
+        }
+
+        #hero p span {
+            border-bottom: 3px solid {{ obj.CorSecundaria }};
+        }
+
+        .section-title h2::after {
+            background: {{ obj.CorSecundaria }};
+        }
+
+        .about .content ul i {
+            color: {{ obj.CorSecundaria }};
+        }
+
+        .skills .progress-bar {
+            background-color: {{ obj.CorSecundaria }};
+        }
+
+        .resume .resume-item {
+            border-left: 2px solid {{ obj.CorSecundaria }};
+        }
+
+        .contact .info i {
+            color: black;
+        }
+
+        .contact .info .email:hover i,
+        .contact .info .address:hover i,
+        .contact .info .phone:hover i {
+            background: {{ obj.CorSecundaria }};
+            color: {{ obj.CorPrimaria }};
+            
+        }
+    </style>
+</head>
+
+<body>
+    <i class="bi bi-list mobile-nav-toggle d-xl-none"></i>
+    <header id="header">
+        <div class="d-flex flex-column">
+
+            <div class="profile">
+                <img src="{{ obj.imagemSobre.url }}" class="img-fluid rounded-circle">
+
+                <h1 class="text-light"><a href="index.html">{{ obj.nome }}</a></h1>
+                <div class="social-links mt-3 text-center">
+                    <a href="{{ obj.facebook }}" class="twitter"><i class="bx bxl-twitter"></i></a>
+                    <a href="{{ obj.github }}" class="facebook"><i class="bi bi-github"></i></a>
+                    <a href="{{ obj.instagran }}" class="instagram"><i class="bx bxl-instagram"></i></a>
+                    <a href="{{ obk.linkdin }}" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+                </div>
+            </div>
+
+            <nav id="navbar" class="nav-menu navbar">
+                <ul>
+                    <li><a href="#hero" class="nav-link scrollto active"><i class="bx bx-home"></i><span>Inicio</span></a></li>
+                    <li><a href="#about" class="nav-link scrollto"><i class="bx bx-user"></i> <span>Sobre</span></a></li>
+                    <li><a href="#resume" class="nav-link scrollto"><i class="bx bx-file-blank"></i><span>Resumo</span></a></li>
+                    <li><a href="#portfolio" class="nav-link scrollto"><i class="bx bx-book-content"></i><span>Projetos</span></a></li>
+                    <li><a href="#contact" class="nav-link scrollto"><i class="bx bx-envelope"></i><span>Contato</span></a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main1">
+        <section id="hero" class="d-flex flex-column justify-content-center align-items-center">
+            <div class="hero-container" data-aos="fade-in">
+                <h1 id="nomeInicio" style="color: {{ obj.CorPrimaria }};">{{ obj.nome }}</h1>
+                <p style="color: {{ obj.CorPrimaria }};">Eu sou <span style="color: {{ obj.CorPrimaria }};" class="typed" data-typed-items="Developer, {{ obj.desenvolvedor }}"></span></p>
+            </div>
+        </section>
+    </main>
+
+    <main id="main">
+        <section id="about" class="about">
+            <div class="container">
+                <div class="section-title">
+                    <h2 style="color: {{ obj.CorSecundaria }};">Sobre</h2>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4 coverImg" data-aos="fade-right">
+                        <img src="{{ obj.imagemSobre.url }}" class="img-fluid" alt="">
+                    </div>
+                    <div class="col-lg-8 pt-4 pt-lg-0 content" data-aos="fade-left">
+                        <h3 style="color: {{ obj.CorSecundaria }};">Desenvolvedor web.</h3>
+                        <br>
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <ul>
+                                    <li ><i class="bi bi-chevron-right"></i> <strong style="color: {{ obj.CorPrimaria }};">Nascimento:</strong> <span style="color: {{ obj.CorPrimaria }};">{{ obj.nascimento }}</span></li>
+                                    <li><i class="bi bi-chevron-right"></i> <strong style="color: {{ obj.CorPrimaria }};">Telefone:</strong> <span style="color: {{ obj.CorPrimaria }};">{{ obj.telefone }}</span></li>
+                                    <li><i class="bi bi-chevron-right"></i> <strong style="color: {{ obj.CorPrimaria }};">Cidade:</strong> <span style="color: {{ obj.CorPrimaria }};">{{ obj.cidade }}</span></li>
+                                </ul>
+                            </div>
+                            <div class="col-lg-6">
+                                <ul>
+                                    <li><i class="bi bi-chevron-right"></i> <strong style="color: {{ obj.CorPrimaria }};">Idade:</strong> <span style="color: {{ obj.CorPrimaria }};">{{ obj.idade }}</span></li>
+                                    <li><i class="bi bi-chevron-right"></i> <strong style="color: {{ obj.CorPrimaria }};">Grau:</strong> <span style="color: {{ obj.CorPrimaria }};">{{ obj.grau }}</span></li>
+                                    <li><i class="bi bi-chevron-right"></i> <strong style="color: {{ obj.CorPrimaria }};">Email:</strong><span style="color: {{ obj.CorPrimaria }};">{{ obj.email }}</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <p style="color: {{ obj.CorPrimaria }};">{{ obj.SobreVoce }}</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="skills section-bg">
+            <div class="container">
+                <div class="section-title">
+                    <h2 style="color: {{ obj.CorSecundaria }};">Habilidades</h2>
+                    <p style="color: {{ obj.CorPrimaria }};">{{ obj.SobreHabilidades }}</p>
+                </div>
+
+                <div class="row skills-content">
+                    <div class="col-lg-6" data-aos="fade-up">
+                        <div class="progress">
+                            <span class="skill" style="color: {{ obj.CorPrimaria }};">{{ obj.linguagen1 }} <i class="val">{{ obj.porcento1 }}%</i></span>
+                            <div class="progress-bar-wrap">
+                                <div class="progress-bar" role="progressbar" aria-valuenow="{{ obj.porcento1 }}" aria-valuemin="0"aria-valuemax="{{ obj.porcento1 }}"></div>
+                            </div>
+                        </div>
+
+                        <div class="progress">
+                            <span class="skill" style="color: {{ obj.CorPrimaria }};">{{ obj.linguagen2 }} <i class="val">{{ obj.porcento2 }}%</i></span>
+                            <div class="progress-bar-wrap">
+                                <div class="progress-bar" role="progressbar" aria-valuenow="{{ obj.porcento2 }}" aria-valuemin="0" aria-valuemax="{{ obj.porcento2 }}"></div>
+                            </div>
+                        </div>
+
+                        <div class="progress">
+                            <span class="skill" style="color: {{ obj.CorPrimaria }};">{{ obj.linguagen3 }} <i class="val">{{ obj.porcento3 }}%</i></span>
+                            <div class="progress-bar-wrap">
+                                <div class="progress-bar" role="progressbar" aria-valuenow="{{ obj.porcento3 }}" aria-valuemin="0" aria-valuemax="{{ obj.porcento3 }}"></div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+
+                        <div class="progress">
+                            <span class="skill" style="color: {{ obj.CorPrimaria }};">{{ obj.linguagen4 }} <i class="val">{{ obj.porcento4 }}%</i></span>
+                            <div class="progress-bar-wrap">
+                                <div class="progress-bar" role="progressbar" aria-valuenow="{{ obj.porcento4 }}" aria-valuemin="0" aria-valuemax="{{ obj.porcento4 }}"></div>
+                            </div>
+                        </div>
+
+                        <div class="progress">
+                            <span class="skill" style="color: {{ obj.CorPrimaria }};">{{ obj.linguagen5 }} <i class="val">{{ obj.porcento5 }}%</i></span>
+                            <div class="progress-bar-wrap">
+                                <div class="progress-bar" role="progressbar" aria-valuenow="{{ obj.porcento5 }}" aria-valuemin="0" aria-valuemax="{{ obj.porcento5 }}"></div>
+                            </div>
+                        </div>
+
+                        <div class="progress">
+                            <span class="skill" style="color: {{ obj.CorPrimaria }};">{{ obj.linguagen6 }} <i class="val">{{ obj.porcento6 }}%</i></span>
+                            <div class="progress-bar-wrap">
+                                <div class="progress-bar" role="progressbar" aria-valuenow="{{ obj.porcento6 }}" aria-valuemin="0" aria-valuemax="{{ obj.porcento6 }}"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="resume" class="resume">
+            <div class="container">
+                <div class="section-title">
+                    <h2 style="color: {{ obj.CorSecundaria }};">Resume</h2>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-6" data-aos="fade-up">
+                        <h3 class="resume-title" style="color: {{ obj.CorPrimaria }};">Sumario</h3>
+                        <div class="resume-item pb-0">
+                            <h4 style="color: {{ obj.CorPrimaria }};">João vitor</h4>
+                            <p><em style="color: {{ obj.CorPrimaria }};">{{ obj.resumoSobre }}</em></p>
+                            <ul>
+                                <li style="color: {{ obj.CorPrimaria }};">{{ obj.cidade }}</li>
+                                <li style="color: {{ obj.CorPrimaria }};">{{ obj.telefone }}</li>
+                                <li style="color: {{ obj.CorPrimaria }};">{{ obj.email }}</li>
+                            </ul>
+                        </div>
+
+                        <h3 class="resume-title" style="color: {{ obj.CorPrimaria }}; display: {{ obj.remover1 }};">Educação</h3>
+                        <div class="resume-item" style="display: {{ obj.remover1 }};">
+                            <h4 style="color: {{ obj.CorPrimaria }};">{{ obj.curso1 }}</h4>
+                            <h5>{{ obj.periodo1 }}</h5>
+                            <p><em style="color: {{ obj.CorPrimaria }};">{{ obj.nomeInstituição1 }}</em></p>
+                            <p style="color: {{ obj.CorPrimaria }};">{{ obj.sobreCurso1 }}</p>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+                        <h3 class="resume-title" style="color: {{ obj.CorPrimaria }}; display: {{ obj.remover2 }};">Experiencia Profissional</h3>
+                        <div class="resume-item" style="display: {{ obj.remover2 }};">
+                            <h4 style="color: {{ obj.CorPrimaria }};">{{ obj.função1 }}</h4>
+                            <h5>{{ obj.periodoSeviço1 }}</h5>
+                            <p><em style="color: {{ obj.CorPrimaria }};">{{ obj.local1 }}</em></p>
+                            <ul>
+                                <li style="color: {{ obj.CorPrimaria }};">{{ obj.cargo1 }}</li>
+                            </ul>
+                        </div>
+
+                        <div class="resume-item" style="display: {{ obj.remover3 }};">
+                            <h4 style="color: {{ obj.CorPrimaria }};">{{ obj.função2 }}</h4>
+                            <h5>{{ obj.periodoSeviço2 }}</h5>
+                            <p><em style="color: {{ obj.CorPrimaria }};">{{ obj.local2 }}</em></p>
+                            <ul>
+                                <li style="color: {{ obj.CorPrimaria }};">{{ obj.cargo2 }}</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="portfolio" class="portfolio section-bg">
+            <div class="container">
+
+                <div class="section-title">
+                    <h2 style="color: {{ obj.CorSecundaria }};">Projetos</h2>
+                    <p style="color: {{ obj.CorPrimaria }};">{{ obj.SobreProjetos }}</p>
+                </div>
+
+                <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="100">
+
+                    <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+                        <div class="portfolio-wrap">
+                            <img src="{{ obj.projetoImagem1.url }}" class="img-fluid" alt="">
+
+                            <div class="portfolio-links">
+                                <a href="{{ obj.projetoImagem1.url }}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="{{ obj.sobreProjeto1 }}"><i class="bx bx-plus"></i></a>
+                                <a href="{{ obj.ProjetoLink1 }}" title="More Details"><i class="bx bx-link"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+                        <div class="portfolio-wrap">
+                            <img src="{{ obj.projetoImagem2.url }}" class="img-fluid"
+                                alt="">
+                            <div class="portfolio-links">
+                                <a href="{{ obj.projetoImagem2.url }}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="{{ obj.sobreProjeto2 }}"><i class="bx bx-plus"></i></a>
+                                <a href="{{ obj.ProjetoLink2 }}" title="More Details"><i class="bx bx-link"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+                        <div class="portfolio-wrap">
+                            <img src="{{ obj.projetoImagem3.url }}" class="img-fluid" alt="">
+                            <div class="portfolio-links">
+                                <a href="{{ obj.projetoImagem3.url }}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="{{ obj.sobreProjeto3 }}"><i class="bx bx-plus"></i></a>
+                                <a href="{{ obj.ProjetoLink3 }}" title="More Details"><i class="bx bx-link"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 portfolio-item filter-card">
+                        <div class="portfolio-wrap">
+                            <img src="{{ obj.projetoImagem4.url }}" class="img-fluid"
+                                alt="">
+                            <div class="portfolio-links">
+                                <a href="{{ obj.projetoImagem4.url }}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="{{ obj.sobreProjeto4 }}"><i class="bx bx-plus"></i></a>
+                                <a href="{{ obj.ProjetoLink4 }}" title="More Details"><i class="bx bx-link"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+                        <div class="portfolio-wrap">
+                            <img src="{{ obj.projetoImagem5.url }}" class="img-fluid"
+                                alt="">
+                            <div class="portfolio-links">
+                                <a href="{{ obj.projetoImagem5.url }}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="{{ obj.sobreProjeto5 }}"><i class="bx bx-plus"></i></a>
+                                <a href="{{ obj.ProjetoLink5 }}" title="More Details"><i class="bx bx-link"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+                        <div class="portfolio-wrap">
+                            <img src="{{ obj.projetoImagem6.url }}" class="img-fluid"
+                                alt="">
+                            <div class="portfolio-links">
+                                <a href="{{ obj.projetoImagem6.url }}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="{{ obj.sobreProjeto6 }}"><i class="bx bx-plus"></i></a>
+                                <a href="{{ obj.ProjetoLink6 }}" title="More Details"><i class="bx bx-link"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact">
+            <div class="container">
+                <div class="section-title">
+                    <h2 style="color: {{ obj.CorSecundaria }};">Contato</h2>
+                    <p style="color: {{ obj.CorPrimaria }};">{{ obj.SobreContato }}</p>
+                </div>
+
+                <div class="row" data-aos="fade-in">
+
+                    <div class="col-lg-5 d-flex align-items-stretch">
+                        <div class="info">
+                            <div class="address">
+                                <i class="bi bi-geo-alt"></i>
+                                <h4 style="color: {{ obj.CorPrimaria }};">Localização:</h4>
+                                <p style="color: {{ obj.CorPrimaria }};">{{ obj.localizacaoVoce }}</p>
+                            </div>
+
+                            <div class="email">
+                                <i class="bi bi-envelope"></i>
+                                <h4 style="color: {{ obj.CorPrimaria }};">Email:</h4>
+                                <p style="color: {{ obj.CorPrimaria }};">{{ obj.email }}</p>
+                            </div>
+
+                            <div class="phone">
+                                <i class="bi bi-phone"></i>
+                                <h4 style="color: {{ obj.CorPrimaria }};">Telefone:</h4>
+                                <p style="color: {{ obj.CorPrimaria }};">{{ obj.telefone }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer id="footer">
+        <div class="container">
+            <div class="copyright">
+                &copy; Copyright <strong><span>{{ obj.nome }}</span></strong>
+            </div>
+        </div>
+    </footer>
+
+    <a href="#hero" id="footer-iconTop" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+
+    <script src="{% static 'vendor/purecounter/purecounter_vanilla.js' %}"></script>
+    <script src="{% static 'vendor/aos/aos.js' %}"></script>
+    <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'vendor/glightbox/js/glightbox.min.js' %}"></script>
+    <script src="{% static 'vendor/isotope-layout/isotope.pkgd.min.js' %}"></script>
+    <script src="{% static 'vendor/swiper/swiper-bundle.min.js' %}"></script>
+    <script src="{% static 'vendor/typed.js/typed.umd.js' %}"></script>
+    <script src="{% static 'vendor/waypoints/noframework.waypoints.js' %}"></script>
+    <script src="{% static 'vendor/php-email-form/validate.js' %}"></script>
+
+
+    <script src="{% static 'js/portifolio2/main.js' %}"></script>
+</body>
+
+</html>

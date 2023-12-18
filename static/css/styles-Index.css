@@ -1,0 +1,843 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@1,6..12,200&family=Roboto:wght@300&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    outline: none;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    scroll-behavior: smooth;
+}
+
+:root {
+    --main-color: #00ccff;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 1rem 9%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 999;
+    transition: .3s;
+    box-shadow: 0 0 10px var(--main-color);
+    background: transparent;
+    backdrop-filter: blur(30px);
+}
+
+#btn-menu {
+    position: absolute;
+    right: 20px;
+    background-color: transparent;
+    display: none;
+    border: none;
+    border-radius: 5px;
+    width: 40px;
+    height: 30px;
+    cursor: pointer;
+}
+
+.linha {
+    width: 25px;
+    height: 2px;
+    background: white;
+    display: block;
+    margin: 4px auto;
+    position: relative;
+    transform-origin: center;
+    transition: .3s;
+}
+
+button.ativar .linha:nth-child(1) {
+    transform: translateY(6px) rotate(-55deg);
+}
+
+button.ativar .linha:nth-child(2) {
+    width: 0;
+}
+
+button.ativar .linha:nth-child(3) {
+    transform: translateY(-6px) rotate(55deg);
+}
+
+header nav a {
+    position: relative;
+    color: white;
+    font-size: 20px;
+    padding: 0 0 0 1rem;
+    transition: .4s;
+    text-decoration: none;
+    animation: efeito 1s linear;
+}
+
+.logo {
+    position: relative;
+    font-size: 40px;
+    font-weight: 600;
+    color: white;
+    animation: efeito 1s linear;
+}
+
+.logo span{
+    color: var(--main-color);
+}
+
+.navbar {
+    position: relative;
+}
+
+.navbar a {
+    position: relative;
+    font-size: 23px;
+    font-weight: 500;
+    margin-left: 30px;
+    transition: .3s;
+    text-decoration: none;
+    color: white;
+}
+
+.navbar a::after {
+    width: 0;
+    height: 3px;
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    content: " ";
+    height: 2px;
+    transition: .5s;
+}
+
+.navbar a:hover::after {
+    width: 100%;
+}
+
+.navbar a:hover,
+.navbar a.active {
+    color: var(--main-color);
+}
+
+section {
+    min-height: 100vh;
+    padding: 6rem 9% 0;
+}
+
+#Inicio{
+    background: linear-gradient(#000505, #001e20);
+}
+
+.inicioContent {
+    position: relative;
+    width: 100%;
+    animation: efeito 1s linear;
+}
+
+.inicioContent h1 {
+    color: var(--main-color);
+    text-align: left;
+    font-size: 50px;
+    margin-bottom: 30px;
+    margin-top: 100px;
+}
+
+.inicioContent p,
+h2 {
+    color: white;
+}
+
+.inicioContent h2 {
+    text-align: center;
+}
+
+.inicioContent p {
+    font-size: 20px;
+    line-height: 2;
+}
+
+.inicioContent p a {
+    color: #00ccff8e;
+    transition: .3s;
+}
+
+
+.inicioContent p a:hover {
+    color: #00ccff;
+}
+
+.inicioContent h2 {
+    margin-top: 100px;
+    margin-bottom: 10px;
+}
+
+.template {
+    background: linear-gradient(#001e20, #00353a);
+}
+
+.tittulo{
+    color: var(--main-color);
+    font-size: 50px;
+    animation: efeito 1s linear;
+}
+
+.template-content{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+    justify-content: center;
+    margin-top: 100px;
+}
+
+.template-box{
+    position: relative;
+    width: 350px;
+    overflow: hidden;
+    margin: 0 auto;
+    margin-bottom: 30px;
+}
+
+
+.template-box a img{
+    width: 350px;
+    transition: .3s;
+}
+
+.template-box a img:hover {
+    transform: scale(1.1);
+}
+
+.links{
+    position: absolute;
+    width: 100%;
+    height: 0;
+    bottom: -10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 40px;
+    background: linear-gradient(transparent, 40%,black);
+    transition: .3s;
+}
+
+.links a{
+    color: white;
+    font-size: 25px;
+    text-decoration: none;
+    transition: .3s;
+}
+
+.links a:hover{
+    transform: scale(1.1);
+}
+
+.links a:hover:nth-child(1) {
+    color: #00ff40;
+}
+
+.links a:hover:nth-child(2) {
+    color: #ffff00;
+}
+
+.links:hover {
+    height: 80px;
+}
+
+.template-box :hover~.links {
+    height: 80px;
+}
+
+.portfolios {
+    position: relative;
+    min-height: 100vh;
+    background: linear-gradient(#000505, #001e20);
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.portfolio-box{
+    margin: 40px auto;
+    padding-right: 30px;
+}
+
+.portfolios-content {
+    width: 400px;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 20px;
+    color: white;
+}
+
+.portfolios-content img {
+    margin: 10px;
+    width: 400px;
+    height: 250px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    transition: .3s;
+}
+
+.links-portfolio {
+    margin-top: 20px;
+    width: 400px;
+    display: flex;
+    justify-content: space-between;
+    background: rgba(0, 0, 0, 0.267);
+    backdrop-filter: blur(10px);
+    border-radius: 5px;
+    padding: 10px 40px;
+    border: 1px solid white;
+}
+
+.links-portfolio a {
+    color: white;
+    font-size: 20px;
+    text-decoration: none;
+    transition: .3s;
+}
+
+.links-portfolio a:hover:nth-child(1){
+    transform: scale(1.1);
+    color: yellow;
+}
+
+.links-portfolio a:hover:nth-child(2) {
+    transform: scale(1.1);
+    color: rgb(252, 87, 87);
+}
+
+.excluir {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(#000505, #001e20);
+}
+
+.fomulario-excluir {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 99;
+}
+
+.fomulario-excluir p {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: white;
+}
+
+.fomulario-excluir button {
+    width: 100px;
+    height: 30px;
+    background: transparent;
+    border: 1px solid white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: .3s;
+    color: white;
+}
+
+.fomulario-excluir button:hover {
+    background: rgba(255, 0, 0, 0.562);
+}
+
+.Perfil{
+    position: absolute;
+    display: none;
+    flex-direction: column;
+    right: -20px;
+    padding-top: 30px;
+    background: transparent;
+    transition: .3s;
+    animation: efeito .3s linear;
+    text-align: right;
+}
+
+.Perfil a{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-right: 5px;
+}
+
+.Perfil:hover{
+    display: flex;
+}
+
+.linkPerfil:hover ~ .Perfil{
+    display: flex;
+}
+
+#myprojects{
+    color: var(--main-color);
+}
+
+.registrar {
+    background: linear-gradient(#000505, #001e20);
+}
+
+.login-content{
+    width: 100%;
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-box{
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.login-box h1{
+    font-size: 40px;
+    color: white;
+    margin-left: -110px;
+    margin-bottom: 5px;
+}
+
+.login-box h1 span{
+    color: var(--main-color);
+}
+
+.login-box p{
+    color: #cccccc;
+    margin-left: -80px;
+    margin-bottom: 50px;
+}
+
+.login-box h3 {
+    color: white;
+    margin-left: -165px;
+}
+
+.login-content form label{
+    color: #cccccc;
+    font-size: 20px;
+    margin-right: 10px;
+}
+
+.login-content form input {
+    border-radius: 5px;
+    padding: 5px;
+    height: 30px;
+    width: 200px;
+    border: 1px solid black;
+    margin-bottom: 30px;
+}
+
+.registre-se-box{
+    margin-top: 60px;
+    display: flex;
+    flex-direction: column;
+    margin-left: -210px;
+    margin-bottom: 30px;
+}
+
+.registre-se-box h1{
+    color: white;
+    font-size: 40px;
+}
+
+.registre-se-box h1 span {
+    color: var(--main-color);
+}
+
+.registre-se-box p {
+    color: #cccccc;
+    margin-bottom: 30px;
+}
+
+.registre-se-box h3{
+    color: white;
+}
+
+.btn-form{
+    width: 100%;
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+}
+
+.btn-form button{
+    border-radius: 5px;
+    background: transparent;
+    font-size: 15px;
+    padding: 10px;
+    height: 30px;
+    width: 100px;
+    color: white;
+    border: 1px solid white;
+    transition: .3s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.btn-form a{
+    margin-top: 8px;
+    text-decoration: none;
+    color: white;
+    transition: .3s;
+}
+
+.btn-form button:hover{
+    background: var(--main-color);
+    color: black;
+}
+
+.btn-form a:hover{
+    color: var(--main-color);
+    text-decoration: underline;
+}
+
+.login-content form span,li{
+    display: none;
+}
+
+.LinkPortfolios{
+    width: 100%;
+    display: flex;
+    margin-top: 20px;
+}
+
+.LinkPortfolios span{
+    color: white;
+    margin-right: 10px;
+}
+
+.LinkPortfolios input{
+    border-radius: 5px;
+    padding: 5px;
+    margin-top: -5px;
+    margin-right: 10px;
+}
+
+.LinkPortfolios button{
+    background: transparent;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 5px;
+    margin-top: -5px;
+    cursor: pointer;
+    background: rgba(0, 255, 0, 0.356);
+    transition: .3s;
+}
+
+.LinkPortfolios button:hover{
+    background: rgb(0, 255, 0);
+}
+
+.card-copiado{
+    position: fixed;
+    top: 100px;
+    right: 0;
+    background: #000000;
+    width: 200px;
+    height: 60px;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    animation: entrance .3s linear;
+    transition: .3s;
+    z-index: 999;
+}
+
+.card-copiado::after{
+    position: absolute;
+    content: "";
+    background: rgb(0, 255, 0);
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 4px;
+    animation: load 2s linear;
+}
+
+.card-copiado.active{
+    display: flex;
+}
+
+.card-copiado i{
+    color: rgb(0, 255, 0);
+}
+
+.card-copiado span{
+    font-size: 20px;
+    color: rgb(0, 255, 0);
+}
+
+.erro{
+    color: white;
+}
+
+@media(max-width: 1300px) {
+    .template-content{
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .template-box{
+        margin: 0 auto;
+        margin-bottom: 30px;
+    }
+}
+
+@media(max-width: 1100px) {
+
+    .header {
+        background: transparent;
+        backdrop-filter: blur(30px);
+        padding: .5rem 4%;
+    }
+
+    .logo{
+        margin-left: 46px;
+    }
+
+    #btn-menu {
+        display: block;
+    }
+
+    #menu-icon {
+        display: block;
+    }
+
+    .navbar {
+        position: absolute;
+        top: 100%;
+        left: -100%;
+        width: 100%;
+        height: auto;
+        padding: 1rem 4%;
+        background: linear-gradient(#000f0f, #00444b);
+        box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .2);
+        z-index: 1;
+        transition: .20s linear;
+        transition-delay: .25s;
+    }
+
+    .navbar.active {
+        left: 0;
+        transition-delay: 0s;
+        border-top: 1px solid var(--main-color);
+        background: linear-gradient(#000f0f,#00444b);
+        
+    }
+
+    .navbar .active-nav {
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: transparent;
+        backdrop-filter: blur(30px);
+        border-top: .1rem solid rgba(0, 0, 0, .2);
+        z-index: -1;
+        transition: .25s ease;
+        transition-delay: 0s;
+    }
+
+    .navbar.active .active-nav {
+        left: 0;
+        transition-delay: .25s;
+        background: transparent;
+        backdrop-filter: blur(30px);
+    }
+
+    .navbar a {
+        display: block;
+        margin-bottom: 50px;
+        font-size: 20px;
+        transform: translateX(-20rem);
+        transition: .25s ease;
+        transition-delay: 0s;
+    }
+
+    .navbar a:nth-child(4) {
+        margin-bottom: 0px;
+    }
+
+    
+
+    .navbar.active a {
+        transform: translateX(0);
+        transition-delay: .25s;
+    }
+
+    .meus-projetos{
+        display: flex;
+        position: absolute;
+        top: 110px;
+        left: -46%;
+    }
+
+    .meus-projetos a{
+        margin: 0;
+        font-size: 20px;
+        color: rgba(0, 204, 255, 0.555);
+    }
+
+    .Perfil{
+        display: flex;
+        position: relative;
+        margin-top: -10px;
+        margin-left: 10px;
+    }
+
+    .Perfil a{
+        margin-left: 0;
+        margin-bottom: 20px;
+        font-size: 20px;
+        text-align: left;
+        color: rgba(0, 204, 255, 0.555);
+    }
+    
+}
+
+@media(max-width: 940px) {
+    .inicio {
+        height: auto;
+    }
+
+    .portfolios {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+@media(max-width: 900px) {
+    .inicioContent h1, .tittulo {
+        text-align: center;
+        font-size: 40px;
+        margin-bottom: 30px;
+        margin-top: 0;
+    }
+
+    .inicioContent p{
+        font-size: 20px;
+    }
+
+    .template-content{
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .template-box{
+        width: 100%;
+    }
+
+    .template-box a img{
+        width: 100%;
+    }
+}
+
+@media(max-width: 768px) {
+
+    .inicio {
+        height: auto;
+    }
+
+    .inicioContent h1 {
+        text-align: center;
+        font-size: 40px;
+    }
+
+    .inicioContent p {
+        text-align: center;
+        font-size: 17px;
+    }
+
+    .logo {
+        font-size: 30px;
+    }
+
+    .tittulo {
+        margin-top: 0;
+    }
+}
+
+@media(max-width: 500px) {
+    .portfolios-content {
+        width: 100%;
+        height: auto;
+    }
+
+    .portfolios-content img {
+        width: 100%;
+        height: auto;
+    }
+
+    .links-portfolio {
+        width: 100%;
+        margin-left: 10px;
+    }
+
+    .LinkPortfolios{
+        width: 100%;
+        margin-left: 20px;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .LinkPortfolios input{
+        width: 100%;
+    }
+
+    .LinkPortfolios span{
+        margin-bottom: 15px;
+    }
+
+    .registre-se-box{
+        width: 100%;
+        margin: 0;
+        padding-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    .LinkPortfolios button{
+        margin-top: 20px;
+        width: 100px;
+    }
+}
+
+@keyframes efeito {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes load {
+    0% {
+        width: 100%;
+    }
+
+    100% {
+        width: 0;
+    }
+}
+
+@keyframes entrance {
+    0% {
+        transform: translateX(30px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}

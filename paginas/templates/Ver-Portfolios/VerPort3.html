@@ -1,0 +1,445 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólio | {{ user }}</title>
+    <link rel="stylesheet" href="{% static 'css/style-portfolioThre.css' %}">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.6/gsap.min.js"></script>
+</head>
+
+<body>
+    <div id="all">
+        <div class="btnVoltar">
+            <a href="{% url 'index' %}"><button>Voltar</button></a>
+        </div>
+        <div class="cursor"></div>
+        <div id="loader">
+            <span class="color">João</span>vitor
+        </div>
+        <div id="breaker"></div>
+        <div id="breaker-two"></div>
+        <div id="navigation-content">
+            <div class="logo"><img src="{% static 'img/imgs-Portfolio3/willy wonka logo.png' %}" alt="logo"></div>
+
+            <div class="navigation-close">
+                <span class="close-first"></span>
+                <span class="close-second"></span>
+            </div>
+
+            <div class="navigation-links">
+                <a href="#" data-text="INICIO" id="home-link">Inicio</a>
+                <a href="#" data-text="SOBRE" id="about-link">Sobre</a>
+                <a href="#" data-text="PROJETOS" id="portfolio-link">Projetos</a>
+                <a href="#" data-text="CONTATO" id="contact-link">Contato</a>
+            </div>
+        </div>
+
+        <div id="navigation-bar">
+            <img src="{% static 'img/imgs-Portfolio3/willy wonka logo.png' %}" alt="logo">
+            <div class="menubar">
+                <span class="first-span"></span>
+                <span class="second-span"></span>
+                <span class="third-span"></span>
+            </div>
+        </div>
+
+        <div id="header">
+            <div id="particles"></div>
+            <div class="social-media-links">
+                <a href="#"><img src="{% static 'img/imgs-Portfolio3/instagram logo.png' %}" class="social-media"
+                        alt="instagram-logo"></a>
+                <a href="#"><img src="{% static 'img/imgs-Portfolio3/linkedin logo.png' %}" class="social-media"
+                        alt="linkedin-logo"></a>
+                <a href="#"><img src="{% static 'img/imgs-Portfolio3/twitter logo.png' %}" class="social-media"
+                        alt="twitter-logo"></a>
+            </div>
+            <div class="header-content">
+                <div class="header-content-box">
+                    <div class="firstline"><span class="color">João </span>Vitor</div>
+                    <div class="secondline">Eu sou
+                        <span class="txt-rotate color" data-period="1200"
+                            data-rotate='[ "Desenvolvedor", " FullStack." ]'></span>
+                        <span class="slash">|</span>
+                    </div>
+                    <div class="contact">
+                        <a href="Mailto:joaopap1234@gmail.com"><img src="{% static 'img/imgs-Portfolio3/mail.png' %}"
+                                alt="email-pic" class="contactpic"></a>
+                        <a href="Tel:19999857719"><img src="{% static 'img/imgs-Portfolio3/call.png' %}" alt="phone-pic"
+                                class="contactpic"></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="header-image">
+                <img src="{% static 'img/imgs-Portfolio3/man.jpg' %}" alt="logo">
+            </div>
+        </div>
+        <div id="about">
+            <div class="color-changer">
+                <div class="color-panel">
+                    <img src="{% static 'img/imgs-Portfolio3/engrenagem.png' %}" alt="">
+                </div>
+                <div class="color-selector">
+                    <div class="heading">Escolha a Cor</div>
+                    <div class="colors">
+                        <ul>
+                            <li><a href="#0" class="color-red " title="color-red"></a></li>
+                            <li><a href="#0" class="color-purple" title="color-purple"></a></li>
+                            <li><a href="#0" class="color-malt" title="color-malt"></a></li>
+                            <li><a href="#0" class="color-green" title="color-green"></a></li>
+                            <li><a href="#0" class="color-blue" title="color-blue"></a></li>
+                            <li><a href="#0" class="color-orange" title="color-orange"></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div id="about-content">
+                <div class="about-header">
+                    Sobre <span class="color">Mim</span>
+                    <span class="header-caption">Conheça-<span class="color"> me.</span></span>
+                </div>
+                <div class="about-main">
+                    <div class="about-first-paragraph wow">
+                        <span class="about-first-line">Olá sou <span class="color">João vitor </span>Moro em conchal-SP
+                        </span>
+                        <br>
+                        <span class="about-second-line">
+                            Tenho 21 anos, sou desenvolvedor, gosto muito do que eu faço.
+                            Estudo diariamente para aprimorar minhas
+                            habilidades. Busco não ser perfeito mais sim um dos melhores nesta área e com foco e
+                            determinação sei que vou chegar lá.
+                            Atualmente estou com 1 ano de experiência criando vários projetos com: python, Django, HTML,
+                            CSS, javascript, jquery,
+                            Bootstrap e atualmente estudando PHP. Meu objetivo é atuar como full-stacks.
+                        </span>
+                        <div class="cv">
+                            <a href="#"><button>Download <span class="colors">CV</span></button></a>
+                        </div>
+                    </div>
+                    <div class="about-img">
+                        <img src="{% static 'img/imgs-Portfolio3/about.jpg' %}" alt="Your Image">
+                    </div>
+                </div>
+            </div>
+
+            <div id="services">
+                <div class="color-changer">
+                    <div class="color-panel">
+                        <img src="{% static 'img/imgs-Portfolio3/engrenagem.png' %}" alt="">
+                    </div>
+                    <div class="color-selector">
+                        <div class="heading">Customizar Cores</div>
+                        <div class="colors">
+                            <ul>
+                                <li><a href="#0" class="color-red " title="color-red"></a></li>
+                                <li><a href="#0" class="color-purple" title="color-purple"></a></li>
+                                <li><a href="#0" class="color-malt" title="color-malt"></a></li>
+                                <li><a href="#0" class="color-green" title="color-green"></a></li>
+                                <li><a href="#0" class="color-blue" title="color-blue"></a></li>
+                                <li><a href="#0" class="color-orange" title="color-orange"></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="services-heading wow"><span class="color">Meus</span> Serviços</div>
+
+                <div class="services-content">
+
+                    <div class="service-one service wow">
+                        <div class="service-img">
+                            <img src="{% static 'img/imgs-Portfolio3/coding.png' %}" alt="service-one">
+                        </div>
+                        <div class="service-description">
+                            <h2>Web Design</h2>
+                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nesciunt animi, saepe at in
+                                eius magnam, eum quasi, unde officiis minima error a nostrum possimus consectetur porro
+                                fuga nulla illo laboriosam.</p>
+                        </div>
+                    </div>
+
+                    <div class="service-two service wow">
+                        <div class="service-img">
+                            <img src="{% static 'img/imgs-Portfolio3/instagram.png' %}" alt="service-two">
+                        </div>
+                        <div class="service-description">
+                            <h2>Mídia Social</h2>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod quibusdam possimus</p>
+                        </div>
+                    </div>
+
+                    <div class="service-three service wow">
+                        <div class="service-img">
+                            <img src="{% static 'img/imgs-Portfolio3/bulb.png' %}" alt="service-three">
+                        </div>
+                        <div class="service-description">
+                            <h2>Design criativo</h2>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod quibusdam possimus</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div id="skills">
+                <div class="skills-header">Minhas <span class="color"> Habilidades</span></div>
+                <div class="skills-content " style="text-align: center;">
+
+                    <div class="skill-html skill">
+                        <div class="skill-text">
+                            <div class="html">HTML/CSS</div>
+                        </div>
+                        <div class="html-prog wow prog">
+                            <div class="html-progress wow">95%</div>
+                        </div>
+                    </div>
+
+                    <div class="skill-html skill">
+                        <div class="skill-text">
+                            <div class="html">Javascript</div>
+                        </div>
+                        <div class="html-prog wow prog">
+                            <div class="js-progress wow">90%</div>
+                        </div>
+                    </div>
+
+                    <div class="skill-html skill">
+                        <div class="skill-text">
+                            <div class="html">Django</div>
+                        </div>
+                        <div class="html-prog wow prog">
+                            <div class="adobe-progress wow">83%</div>
+                        </div>
+                    </div>
+
+                    <div class="skill-html skill">
+                        <div class="skill-text">
+                            <div class="html">Bootstrap</div>
+                        </div>
+                        <div class="html-prog wow prog">
+                            <div class="php-progress wow">87%</div>
+                        </div>
+                    </div>
+
+                    <div class="skill-html skill">
+                        <div class="skill-text">
+                            <div class="html">JQuery</div>
+                        </div>
+                        <div class="html-prog wow prog">
+                            <div class="jquery-progress wow">94%</div>
+                        </div>
+                    </div>
+
+                    <div class="skill-html skill">
+                        <div class="skill-text">
+                            <div class="html">MySQL</div>
+                        </div>
+                        <div class="html-prog wow prog">
+                            <div class="seo-progress wow">84%</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer">
+                <div class="footer-text"><img src="{% static 'img/imgs-Portfolio3/copyright.png' %}" alt="copyright-img"
+                        class="images" height="14px"> CreatePort</div>
+            </div>
+        </div>
+
+        <div id="portfolio">
+            <div class="color-changer">
+                <div class="color-panel">
+                    <img src="{% static 'img/imgs-Portfolio3/engrenagem.png' %}" alt="">
+                </div>
+
+                <div class="color-selector">
+                    <div class="heading">Customizar Cores</div>
+                    <div class="colors">
+                        <ul>
+                            <li><a href="#0" class="color-red " title="color-red"></a></li>
+                            <li><a href="#0" class="color-purple" title="color-purple"></a></li>
+                            <li><a href="#0" class="color-malt" title="color-malt"></a></li>
+                            <li><a href="#0" class="color-green" title="color-green"></a></li>
+                            <li><a href="#0" class="color-blue" title="color-blue"></a></li>
+                            <li><a href="#0" class="color-orange" title="color-orange"></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="portfolio-header"> <span class="color"> Meus </span> Projetos
+                <span class="header-caption"> Algun dos meus <span class="color"> Trabalhos</span></span>
+            </div>
+
+            <div id="portfolio-content">
+                <div class="portfolio portfolio-first">
+                    <div class="portfolio-image">
+                        <img src="{% static 'img/imgs-Portfolio3/portfolio-first.jpg' %}" alt="portfolio-first">
+                    </div>
+
+                    <div class="portfolio-text">
+                        <h2>Teste</h2>
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ad ut optio repellat cupiditate
+                            expedita eius dignissimos. Id cumque placeat minima ad laudantium suscipit voluptatem
+                            ducimus
+                        </p>
+                        <div class="button"><a href="#"><button><span class="index"> Ver projeto<i
+                                            class="gg-arrow-right"></i></span></button></a></div>
+                    </div>
+                </div>
+
+                <div class="portfolio portfolio-second">
+                    <div class="portfolio-image">
+                        <img src="{% static 'img/imgs-Portfolio3/portfolio-second.jpg' %}" alt="portfolio-second">
+                    </div>
+                    <div class="portfolio-text">
+                        <h2>Teste</h2>
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Id cumque placeat minima ad
+                            laudantium suscipit
+                            voluptatem ducimus. Id cumque placeat minima ad laudantium suscipit voluptatem ducimus
+                        </p>
+                        <div class="button"><a href="#"><button><span class="index"> Ver projeto<i
+                                            class="gg-arrow-right"></i></span></button></a></div>
+                    </div>
+                </div>
+
+                <div class="portfolio portfolio-third">
+                    <div class="portfolio-image">
+                        <img src="{% static 'img/imgs-Portfolio3/portfolio-third.jpg' %}" alt="portfolio-third">
+                    </div>
+                    <div class="portfolio-text">
+                        <h2>Teste</h2>
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ad ut optio repellat cupiditate
+                            expedita eius dignissimos
+                            .. Id cumque placeat minima ad laudantium suscipit voluptatem ducimus
+                        </p>
+                        <div class="button"><a href="#"><button><span class="index"> Ver projeto<i
+                                            class="gg-arrow-right"></i></span></button></a></div>
+                    </div>
+                </div>
+                <div class="portfolio portfolio-fourth">
+                    <div class=" portfolio-image">
+                        <img src="{% static 'img/imgs-Portfolio3/portfolio-fourth.jpg' %}" alt="portfolio-fourth">
+                    </div>
+                    <div class="portfolio-text">
+                        <h2>Teste</h2>
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ad ut optio repellat cupiditate
+                            expedita eius dignissimos. Id cumque placeat minima ad laudantium suscipit voluptatem
+                            ducimus
+                        </p>
+                        <div class="button"><a href="#"><button><span class="index"> Ver projeto<i
+                                            class="gg-arrow-right"></i></span></button></a></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer">
+                <div class="footer-text">
+                    <img src="{% static 'img/imgs-Portfolio3/copyright.png' %}" alt="copyright-img" class="images"
+                        height="14px"> CreatePort
+                </div>
+            </div>
+        </div>
+
+
+        <div id="contact">
+            <div class="color-changer">
+                <div class="color-panel"><img src="{% static 'img/imgs-Portfolio3/engrenagem.png' %}" alt=""></div>
+                <div class="color-selector">
+                    <div class="heading">Customizar cores</div>
+                    <div class="colors">
+                        <ul>
+                            <li><a href="#0" class="color-red " title="color-red"></a></li>
+                            <li><a href="#0" class="color-purple" title="color-purple"></a></li>
+                            <li><a href="#0" class="color-malt" title="color-malt"></a></li>
+                            <li><a href="#0" class="color-green" title="color-green"></a></li>
+                            <li><a href="#0" class="color-blue" title="color-blue"></a></li>
+                            <li><a href="#0" class="color-orange" title="color-orange"></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="contact-header">Contate-<span class="color">Me</span>
+                <div class="contact-header-caption"> <span class="color"> Entrar em</span> contato.</div>
+            </div>
+
+            <div class="contact-content">
+                <div class="contact-form">
+                    <div class="form-header">Message Me</div>
+                    <form id="myForm" action="#">
+                        <div class="input-line">
+                            <input id="name" type="text" placeholder="Name" class="input-name">
+                            <input id="email" type="email" placeholder="Email" class="input-name">
+                        </div>
+                        <input type="text" id="subject" placeholder="subject" class="input-subject">
+                        <textarea id="body" class="input-textarea" placeholder="message"></textarea>
+                        <button type="button" id="submit" value="send">Submit</button>
+                    </form>
+                </div>
+
+                <div class="contact-info">
+                    <div class="contact-info-header">Contact Info</div>
+                    <div class="contact-info-content">
+                        <div class="contect-info-content-line">
+                            <img src="{% static 'img/imgs-Portfolio3/icon-name.png' %}" class="icon" alt="name-icon">
+                            <div class="contact-info-icon-text">
+                                <h6>Name</h6>
+                                <p>Arlo Brown</p>
+                            </div>
+                        </div>
+
+                        <div class="contect-info-content-line">
+                            <img src="{% static 'img/imgs-Portfolio3/icon-location.png' %}" class="icon"
+                                alt="location-icon">
+                            <div class="contact-info-icon-text">
+                                <h6>Location</h6>
+                                <p>New York, USA</p>
+                            </div>
+                        </div>
+
+                        <div class="contect-info-content-line">
+                            <img src="{% static 'img/imgs-Portfolio3/icon-phone.png' %}" class="icon" alt="phone-icon">
+                            <div class="contact-info-icon-text">
+                                <h6>Call</h6>
+                                <p>+9865376531</p>
+                            </div>
+                        </div>
+
+                        <div class="contect-info-content-line">
+                            <img src="{% static 'img/imgs-Portfolio3/icon-email.png' %}" class="icon" alt="email-icon">
+                            <div class="contact-info-icon-text">
+                                <h6>Email</h6>
+                                <p>Info@example.com</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer">
+                <div class="footer-text">
+                    <img src="{% static 'img/imgs-Portfolio3/copyright.png' %}" alt="copyright-img" class="images"
+                        height="14px"> CreatePort
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="{% static 'js/portifolio3/jquery.min.js' %}"></script>
+    <script src="{% static 'js/portifolio3/particles.js' %}"></script>
+    <script src="{% static 'js/portifolio3/particles.min.js' %}"></script>
+    <script src="{% static 'js/portifolio3/index1.js' %}"></script>
+
+    <script>
+        particlesJS("particles", { "particles": { "number": { "value": 40, "density": { "enable": true, "value_area": 800 } }, "color": { "value": "#ffffff" }, "shape": { "type": "circle", "stroke": { "width": 0, "color": "#000000" }, "polygon": { "nb_sides": 5 }, "image": { "src": "img/github.svg", "width": 100, "height": 100 } }, "opacity": { "value": 0.5, "random": false, "anim": { "enable": false, "speed": 1, "opacity_min": 0.1, "sync": false } }, "size": { "value": 3, "random": true, "anim": { "enable": false, "speed": 40, "size_min": 0.1, "sync": false } }, "line_linked": { "enable": true, "distance": 150, "color": "#ffffff", "opacity": 0.4, "width": 1 }, "move": { "enable": true, "speed": 6, "direction": "none", "random": false, "straight": false, "out_mode": "out", "bounce": false, "attract": { "enable": false, "rotateX": 600, "rotateY": 1200 } } }, "interactivity": { "detect_on": "canvas", "events": { "onhover": { "enable": true, "mode": "repulse" }, "onclick": { "enable": true, "mode": "push" }, "resize": true }, "modes": { "grab": { "distance": 400, "line_linked": { "opacity": 1 } }, "bubble": { "distance": 400, "size": 40, "duration": 2, "opacity": 8, "speed": 3 }, "repulse": { "distance": 200, "duration": 0.4 }, "push": { "particles_nb": 4 }, "remove": { "particles_nb": 2 } } }, "retina_detect": true });
+    </script>
+
+</body>
+
+</html>

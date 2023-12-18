@@ -1,0 +1,75 @@
+
+{% extends 'index.html' %}
+{% load static %}
+
+{% block inicio %}
+<a href="{% url 'index' %}">Inicio</a>
+{% endblock %}
+{% block template %}
+<a href="http://127.0.0.1:8000/#template">Templates</a>
+{% endblock %}
+{% block projetos %}
+<a href="{% url 'listarTodosPortfolios' %}" id="myprojects">Meus projetos</a>
+{% endblock %}
+
+{% block conteudo %}
+<section class="portfolios">
+    <div class="card-copiado">
+        <span><i class="bi bi-check2-circle"></i> Link Copiado</span>
+    </div>
+    {% for obj in Portfolio_one %}
+    <div class="portfolio-box">
+        <div class="portfolios-content">
+            <a href="{% url 'detail' obj.pk%}"><img src="{% static 'img/capa-portifolio.jpg' %}" alt=""></a>
+        </div>
+        <div class="links-portfolio">
+            <a href="{% url 'editar-portfolio' obj.pk %}"><i class="bi bi-pencil"></i> Editar</a>
+            <a href="{% url 'excluir-Portifolio' obj.pk %}"><i class="bi bi-trash3"></i> Excluir</a>
+        </div>
+        <div class="LinkPortfolios">
+            <span>Link do seu Portfólio</span>
+            <input id="Link" type="text" value="http://127.0.0.1:8000{% url 'detail' obj.pk%}" >
+            <button id="Copiar" class="btn_Copiar" onclick="abrirModal1()">Copiar</button>
+        </div>
+    </div>
+    {% endfor %}
+
+    {% for teste in Portfolio_Two %}
+    <div class="portfolio-box">
+        <div class="portfolios-content">
+            <a href="{% url 'detail2' teste.pk%}"><img src="{% static 'img/fundo-port2.png' %}" alt=""></a>
+        </div>
+        <div class="links-portfolio">
+            <a href="{% url 'editar-portfolio2' teste.pk %}"><i class="bi bi-pencil"></i> Editar</a>
+            <a href="{% url 'excluir-PortifolioTwo' teste.pk %}"><i class="bi bi-trash3"></i> Excluir</a>
+        </div>
+        <div class="LinkPortfolios">
+            <span>Link do seu Portfólio</span>
+            <input id="Link2" type="text" value="http://127.0.0.1:8000/MeuPortfolio{% url 'detail' teste.pk%}">
+            <button id="Copiar2" class="btn_Copiar" onclick="abrirModal2()">Copiar</button>
+        </div>
+    </div>
+    {% endfor %}
+
+    {% for Port3 in Portfolio_Thre %}
+    <div class="portfolio-box">
+        <div class="portfolios-content">
+            <a href="{% url 'detailThre' Port3.pk %}"><img src="{% static 'img/Portfolio3.png' %}" alt=""></a>
+        </div>
+        <div class="links-portfolio">
+            <a href="{% url 'editar-portfolio3' Port3.pk %}"><i class="bi bi-pencil"></i> Editar</a>
+            <a href="{% url 'excluir-PortifolioThre' Port3.pk %}"><i class="bi bi-trash3"></i> Excluir</a>
+        </div>
+        <div class="LinkPortfolios">
+            <span>Link do seu Portfólio</span>
+            <input id="Link3" type="text" value="http://127.0.0.1:8000/MeuPortfolioThre{% url 'detail' Port3.pk%}">
+            <button id="Copiar3" class="btn_Copiar" onclick="abrirModal3()">Copiar</button>
+        </div>
+    </div>
+    {% endfor %}
+</section>
+{% endblock %}
+
+{% block js %}
+<script src="{% static 'js/Projetos.js' %}"></script>
+{% endblock %}

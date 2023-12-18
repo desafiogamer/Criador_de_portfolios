@@ -1,0 +1,461 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólio | {{ user }}</title>
+    <link rel="stylesheet" href="{% static 'css/style-portfolioThre.css' %}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.6/gsap.min.js"></script>
+    <style type="text/css">
+        @media (max-width: 768px) {
+            #header{
+                height: 1500px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="all">
+        <form action="" method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="cursor"></div>
+            <div id="loader"><span class="color">João</span>vitor</div>
+            <div id="breaker"></div>
+            <div id="breaker-two"></div>
+            <div id="navigation-content">
+                <div class="logo"><img src="{% static 'img/imgs-Portfolio3/willy wonka logo.png' %}" alt="logo"></div>
+                
+                <div class="navigation-close">
+                    <span class="close-first"></span>
+                    <span class="close-second"></span>
+                </div>
+
+                <div class="navigation-links">
+                    <a href="#" data-text="INICIO" id="home-link">Inicio</a>
+                    <a href="#" data-text="SOBRE" id="about-link">Sobre</a>
+                    <a href="#" data-text="PROJETOS" id="portfolio-link">Projetos</a>
+                    <a href="#" data-text="CONTATO" id="contact-link">Contato</a>
+                </div>
+            </div>
+            
+            <div id="navigation-bar">
+                <img src="{% static 'img/imgs-Portfolio3/willy wonka logo.png' %}" alt="logo">
+                <div class="menubar">
+                    <span class="first-span"></span>
+                    <span class="second-span"></span>
+                    <span class="third-span"></span>
+                </div>
+            </div>
+            
+            <div id="header" class="teste">
+                <div id="particles"></div>
+                <div class="social-media-links">
+                    <a href="#"><img src="{% static 'img/imgs-Portfolio3/instagram logo.png' %}" class="social-media" alt="instagram-logo"></a>
+                    <a href="#"><img src="{% static 'img/imgs-Portfolio3/linkedin logo.png' %}" class="social-media" alt="linkedin-logo"></a>
+                    <a href="#"><img src="{% static 'img/imgs-Portfolio3/twitter logo.png' %}" class="social-media" alt="twitter-logo"></a>
+                </div>
+                <div class="header-content">
+                    <div class="header-content-box">
+                        <div class="linksInicio">
+                            <div>
+                                <span>Seu nome <i class="bi bi-arrow-down-short"></i></span>
+                                <br>
+                                {{ form.nome }}
+                            </div>
+
+                            <div>
+                                <span>Seu icone <i class="bi bi-arrow-down-short"></i></span>
+                                <br>
+                                <div class="Botao-carro">
+                                    {{ form.logo }}
+                                    <i class="bi bi-file-earmark-plus-fill"></i>
+                                </div>
+                            </div>
+
+                            <div>
+                                <span>Desenvolvedor <i class="bi bi-arrow-down-short"></i></span>
+                                <br>
+                                {{ form.desenvolvedor }}
+                            </div>
+
+                            <div>
+                                <span>Link do linkdin <i class="bi bi-arrow-down-short"></i></span>
+                                <br>
+                                {{ form.linkdin }}
+                            </div>
+
+                            <div>
+                                <span>Link do github <i class="bi bi-arrow-down-short"></i></span>
+                                <br>
+                                {{ form.github }}
+                            </div>
+
+                            <div>
+                                <span>Link do instagran <i class="bi bi-arrow-down-short"></i></span>
+                                <br>
+                                {{ form.instagran }}
+                            </div>
+
+                            <div>
+                                <span>Telefone <i class="bi bi-arrow-down-short"></i></span>
+                                <br>
+                                {{ form.telefone }}
+                            </div>
+
+                            <div>
+                                <span>Seu email <i class="bi bi-arrow-down-short"></i></span>
+                                <br>
+                                {{ form.email }}
+                            </div>
+
+                            <div>
+                                <span>Imagem de Fundo (fundo trasparente)<i class="bi bi-arrow-down-short"></i></span>
+                                <br>
+                                <div class="Botao-carro">
+                                    {{ form.ImagemDePerfil }}
+                                    <i class="bi bi-file-earmark-plus-fill"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="header-image">
+                    <img src="{% static 'img/imgs-Portfolio3/man.jpg' %}" alt="logo">
+                </div>
+            </div>
+            <div id="about">
+                <div class="color-changer">
+                    <div class="color-panel">
+                        <img src="{% static 'img/imgs-Portfolio3/engrenagem.png' %}" alt="">  
+                    </div>
+                    <div class="color-selector">
+                        <div class="heading">Escolha a Cor</div>
+                        <div class="colors">
+                            <ul>
+                                <li><a href="#0" class="color-red " title="color-red"></a></li>
+                                <li><a href="#0" class="color-purple" title="color-purple"></a></li>
+                                <li><a href="#0" class="color-malt" title="color-malt"></a></li>
+                                <li><a href="#0" class="color-green" title="color-green"></a></li>
+                                <li><a href="#0" class="color-blue" title="color-blue"></a></li>
+                                <li><a href="#0" class="color-orange" title="color-orange"></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div id="about-content">
+                    <div class="about-header">
+                        Sobre <span class="color">Mim</span>
+                        <span class="header-caption">Conheça-<span class="color"> me.</span></span>
+                    </div>
+                    <div class="about-main">
+                        <div class="about-first-paragraph wow">
+                            <span class="about-first-line">Olá sou <span class="color">AUTOMATICO!! </span>Moro em {{ form.cidade }} </span>
+                            <br>
+                            <span class="about-second-line cover">
+                                <p>Sobre voce <i class="bi bi-arrow-down-short"></i></p>
+                                {{ form.SobreVoce }} 
+                            </span>
+                            <div class="link-curriculo">
+                                <span>Link do curriculo</span>
+                                {{ form.curriculo }}
+                            </div>
+                        </div>
+                        <div class="about-img">
+                            <div class="cover2">
+                                <span>Imagem de perfil <i class="bi bi-arrow-down-short"></i></span>
+                                <div class="Botao-carro">
+                                    {{ form.ImagemSobreVoce }}
+                                    <i class="bi bi-file-earmark-plus-fill"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="services">
+                    <div class="color-changer">
+                        <div class="color-panel">
+                            <img src="{% static 'img/imgs-Portfolio3/engrenagem.png' %}" alt="">                 
+                        </div>
+                        <div class="color-selector">
+                            <div class="heading">Customizar Cores</div>
+                            <div class="colors">
+                                <ul>
+                                    <li><a href="#0" class="color-red " title="color-red"></a></li>
+                                    <li><a href="#0" class="color-purple" title="color-purple"></a></li>
+                                    <li><a href="#0" class="color-malt" title="color-malt"></a></li>
+                                    <li><a href="#0" class="color-green" title="color-green"></a></li>
+                                    <li><a href="#0" class="color-blue" title="color-blue"></a></li>
+                                    <li><a href="#0" class="color-orange" title="color-orange"></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="services-heading wow"><span class="color">Meus</span> Serviços</div>
+
+                    <div class="services-content back-Service">
+                        <div class="service-one service wow">
+                            <div class="service-img">
+                                <img src="{% static 'img/imgs-Portfolio3/coding.png' %}" alt="service-one"> 
+                            </div>
+                            <div class="service-description">
+                                <span>Fale um pouco sobre seu Design <i class="bi bi-arrow-down-short"></i></span>
+                                <p>{{ form.SobreDesigner }}</p>
+                            </div>
+                        </div>
+
+                        <div class="service-two service wow">
+                            <div class="service-img">
+                                <img src="{% static 'img/imgs-Portfolio3/instagram.png' %}" alt="service-two">
+                            </div>
+                            <div class="service-description">
+                                <span>Fale um pouco sobre sua rede social <i class="bi bi-arrow-down-short"></i></span>
+                                <p>{{ form.SobreSocial }}</p>
+                            </div>
+                        </div>
+
+                        <div class="service-three service wow">
+                            <div class="service-img">
+                                <img src="{% static 'img/imgs-Portfolio3/bulb.png' %}" alt="service-three">
+                            </div>
+                            <div class="service-description">
+                                <span>Fale um pouco sobre sua creatividade <i class="bi bi-arrow-down-short"></i></span>
+                                <p>{{ form.SobreCreativo }}</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div id="skills">
+                    <div class="skills-header">Minhas <span class="color"> Habilidades</span></div>
+                    <div class="skills-content alinhar-skills" style="text-align: center;">
+
+                        <div class="skill-html skill">
+                            <div class="skill-text text">
+                                <span>Linguagem:</span>
+                                {{ form.linguagen1 }}
+                            </div>
+                            <div class="html-prog wow prog">
+                                {{ form.porcento1 }}%
+                            </div>
+                        </div>
+
+                        <div class="skill-html skill">
+                            <div class="skill-text text">
+                                <span>Linguagem:</span>
+                                {{ form.linguagen2 }}
+                            </div>
+                            <div class="html-prog wow prog">
+                                {{ form.porcento2 }}%
+                            </div>
+                        </div>
+                        
+                        <div class="skill-html skill">
+                            <div class="skill-text text">
+                                <span>Linguagem:</span>
+                                {{ form.linguagen3 }}
+                            </div>
+                            <div class="html-prog wow prog">
+                                {{ form.porcento3 }}%
+                            </div>
+                        </div>
+
+                        <div class="skill-html skill">
+                            <div class="skill-text text">
+                                <span>Linguagem:</span>
+                                {{ form.linguagen4 }}
+                            </div>
+                            <div class="html-prog wow prog">
+                                {{ form.porcento4 }}%
+                            </div>
+                        </div>
+                        
+                        <div class="skill-html skill">
+                            <div class="skill-text text">
+                                <span>Linguagem:</span>
+                                {{ form.linguagen5 }}
+                            </div>
+                            <div class="html-prog wow prog">
+                                {{ form.porcento5 }}%
+                            </div>
+                        </div>
+
+                        <div class="skill-html skill">
+                            <div class="skill-text text">
+                                <span>Linguagem:</span>
+                                {{ form.linguagen6 }}
+                            </div>
+                            <div class="html-prog wow prog">
+                                {{ form.porcento6 }}%
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="portfolio">
+                <div class="color-changer">
+                    <div class="color-panel">
+                        <img src="{% static 'img/imgs-Portfolio3/engrenagem.png' %}" alt="">
+                    </div>
+
+                    <div class="color-selector">
+                        <div class="heading">Customizar Cores</div>
+                        <div class="colors">
+                            <ul>
+                                <li><a href="#0" class="color-red " title="color-red"></a></li>
+                                <li><a href="#0" class="color-purple" title="color-purple"></a></li>
+                                <li><a href="#0" class="color-malt" title="color-malt"></a></li>
+                                <li><a href="#0" class="color-green" title="color-green"></a></li>
+                                <li><a href="#0" class="color-blue" title="color-blue"></a></li>
+                                <li><a href="#0" class="color-orange" title="color-orange"></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-header"> <span class="color"> Meus </span> Projetos
+                    <span class="header-caption"> Algun dos meus <span class="color"> Trabalhos</span></span>
+                </div>
+
+                <div id="portfolio-content" class="Portfolio-space">
+                    <div class="portfolio portfolio-first">
+                        <div class="portfolio-image cover3">
+                            <p class="space">Imagem do Projeto <i class="bi bi-arrow-down-short"></i></p>
+                            <div class="Botao-carro">
+                                {{ form.imagemProjeto1 }}
+                                <i class="bi bi-file-earmark-plus-fill"></i>
+                            </div>
+                        </div>
+
+                        <div class="portfolio-text portfolio-text-mobi">
+                            <h2>Titulo: {{ form.titulo1 }}</h2>
+                            <p>Sobre o Projeto <i class="bi bi-arrow-down-short"></i></p>
+                            {{ form.DescricaoProjeto1 }}
+                            <p>Link do projeto <i class="bi bi-arrow-down-short"></i></p>
+                            {{ form.LinkProjeto1 }}
+                        </div>
+                    </div>
+
+                    <div class="portfolio portfolio-second">
+                        <div class="portfolio-image cover3">
+                            <p class="space">Imagem do Projeto <i class="bi bi-arrow-down-short"></i></p>
+                            <div class="Botao-carro">
+                                {{ form.imagemProjeto2 }}
+                                <i class="bi bi-file-earmark-plus-fill"></i>
+                            </div>
+                        </div>
+                        <div class="portfolio-text portfolio-text-mobi">
+                            <h2>Titulo: {{ form.titulo2 }}</h2>
+                            <p>Sobre o Projeto <i class="bi bi-arrow-down-short"></i></p>
+                            {{ form.DescricaoProjeto2 }}
+                            <p>Link do projeto <i class="bi bi-arrow-down-short"></i></p>
+                            {{ form.LinkProjeto2 }}
+                        </div>
+                    </div>
+
+                    <div class="portfolio portfolio-third">
+                        <div class="portfolio-image cover3">
+                            <p class="space">Imagem do Projeto <i class="bi bi-arrow-down-short"></i></p>
+                            <div class="Botao-carro">
+                                {{ form.imagemProjeto3 }}
+                                <i class="bi bi-file-earmark-plus-fill"></i>
+                            </div>
+                        </div>
+                        <div class="portfolio-text portfolio-text-mobi">
+                            <h2>Titulo: {{ form.titulo3 }}</h2>
+                            <p>Sobre o Projeto <i class="bi bi-arrow-down-short"></i></p>
+                            {{ form.DescricaoProjeto3 }}
+                            <p>Link do projeto <i class="bi bi-arrow-down-short"></i></p>
+                            {{ form.LinkProjeto3 }}
+                        </div>
+                    </div>
+                    <div class="portfolio portfolio-fourth">
+                        <div class=" portfolio-image cover3">
+                            <p class="space">Imagem do Projeto <i class="bi bi-arrow-down-short"></i></p>
+                            <div class="Botao-carro">
+                                {{ form.imagemProjeto4 }}
+                                <i class="bi bi-file-earmark-plus-fill"></i>
+                            </div>
+                        </div>
+                        <div class="portfolio-text portfolio-text-mobi">
+                            <h2>Titulo: {{ form.titulo }}</h2>
+                            <p>Sobre o Projeto <i class="bi bi-arrow-down-short"></i></p>
+                            {{ form.DescricaoProjeto4 }}
+                            <p>Link do projeto <i class="bi bi-arrow-down-short"></i></p>
+                            {{ form.LinkProjeto4 }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+            <div id="contact">
+                <div class="color-changer">
+                    <div class="color-panel"><img src="{% static 'img/imgs-Portfolio3/engrenagem.png' %}" alt=""></div>
+                    <div class="color-selector">
+                        <div class="heading">Customizar cores</div>
+                        <div class="colors">
+                            <ul>
+                                <li><a href="#0" class="color-red " title="color-red"></a></li>
+                                <li><a href="#0" class="color-purple" title="color-purple"></a></li>
+                                <li><a href="#0" class="color-malt" title="color-malt"></a></li>
+                                <li><a href="#0" class="color-green" title="color-green"></a></li>
+                                <li><a href="#0" class="color-blue" title="color-blue"></a></li>
+                                <li><a href="#0" class="color-orange" title="color-orange"></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-header">Contate-<span class="color">Me</span>
+                    <div class="contact-header-caption"> <span class="color"> Entrar em</span>  contato.</div>
+                </div>
+
+                <div class="contact-content">
+                    <div>
+                        <div class="contact-info-header">Informação de contato</div>
+                        <div class="contact-info-content">
+                            <p>Sua localização <i class="bi bi-arrow-down-short"></i></p>
+                            {{ form.localizacaoVoce }}
+                            <p>Cor de texto primario <i class="bi bi-arrow-down-short"></i></p>
+                            {{ form.CorPrimaria }}
+                            <p>Cor de texto secundario <i class="bi bi-arrow-down-short"></i></p>
+                            {{ form.CorSecundaria }}
+                            <p>Cor de fundo (todas as sessões) <i class="bi bi-arrow-down-short"></i></p>
+                            {{ form.CorDoFundo }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button type="submit">Salvar Projeto</button>
+            <div class="footer">
+                <div class="footer-text">
+                    <img src="{% static 'img/imgs-Portfolio3/copyright.png' %}" alt="copyright-img" class="images" height="14px">
+                    CreatePort
+                </div>
+            </div>
+        </form>
+    </div>
+    
+    <script src="{% static 'js/portifolio3/jquery.min.js' %}"></script>
+    <script src="{% static 'js/portifolio3/particles.js' %}"></script>
+    <script src="{% static 'js/portifolio3/particles.min.js' %}"></script>
+    <script src="{% static 'js/portifolio3/index1.js' %}"></script>
+    <script src="{% static 'js/jscolor/colorfield.js' %}"></script>
+    <script src="{% static 'js/jscolor/jscolor.js' %}"></script>
+    <script src="{% static 'js/jscolor/jscolor.min.js' %}"></script>
+    
+    <script>
+        particlesJS("particles", { "particles": { "number": { "value": 40, "density": { "enable": true, "value_area": 800 } }, "color": { "value": "#ffffff" }, "shape": { "type": "circle", "stroke": { "width": 0, "color": "#000000" }, "polygon": { "nb_sides": 5 }, "image": { "src": "img/github.svg", "width": 100, "height": 100 } }, "opacity": { "value": 0.5, "random": false, "anim": { "enable": false, "speed": 1, "opacity_min": 0.1, "sync": false } }, "size": { "value": 3, "random": true, "anim": { "enable": false, "speed": 40, "size_min": 0.1, "sync": false } }, "line_linked": { "enable": true, "distance": 150, "color": "#ffffff", "opacity": 0.4, "width": 1 }, "move": { "enable": true, "speed": 6, "direction": "none", "random": false, "straight": false, "out_mode": "out", "bounce": false, "attract": { "enable": false, "rotateX": 600, "rotateY": 1200 } } }, "interactivity": { "detect_on": "canvas", "events": { "onhover": { "enable": true, "mode": "repulse" }, "onclick": { "enable": true, "mode": "push" }, "resize": true }, "modes": { "grab": { "distance": 400, "line_linked": { "opacity": 1 } }, "bubble": { "distance": 400, "size": 40, "duration": 2, "opacity": 8, "speed": 3 }, "repulse": { "distance": 200, "duration": 0.4 }, "push": { "particles_nb": 4 }, "remove": { "particles_nb": 2 } } }, "retina_detect": true });
+    </script>
+
+</body>
+
+</html>

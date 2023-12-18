@@ -1,0 +1,85 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CreatePort</title>
+    <link rel="stylesheet" href="{% static 'css/styles-Index.css' %}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
+</head>
+<body>
+    <header id="header" class="header">
+        {% block logo %}
+        <h1 class="logo">Create<span>Port</span></h1>
+        {% endblock %}
+        <nav id="nav" class="navbar">
+            {% block inicio %}
+            <a href="#Inicio" class="active">Inicio</a>
+            {% endblock %}
+            {% block template %}
+            <a href="#template">Templates</a>
+            {% endblock %}
+            {% block projetos %}
+            <a href="{% url 'listarTodosPortfolios' %}">Meus projetos</a>
+            {% endblock %}
+            {% if user.is_authenticated %}
+            <a href="{% url 'logout' %}">Logout</a>
+            {% else %}
+            <a href="{% url 'login' %}">Login</a>
+            {% endif %}
+        </nav>
+        <button id="btn-menu">
+            <span class="linha"></span>
+            <span class="linha"></span>
+            <span class="linha"></span>
+        </button>
+    </header>
+
+    {% block conteudo %}
+    <section id="Inicio" class="Inicio">
+        <div class="inicioContent">
+            <h1>Crie seu portfólio online!!</h1>
+            <p>Navegue pelos nossos modelos de portfólio <strong>responsivos</strong> <a href="#template">abaixo</a>.</p>
+            <p>Podendo alterar o plano de fundo com imagens ou uma cor da sua preferencia!!</p>
+            <p>Tambem poderá alterar os texto, cores de texto primário e secundário.</p>
+            <p>Seu Portfólio ficará hospedado em nosso site sem nenhum custo.</p>
+        </div>
+    </section>
+
+    <section class="template" id="template">
+        <h1 class="tittulo">Escolha seu template</h1>
+        <div class="template-content">
+
+            <div class="template-box">
+                <a><img src="{% static 'img/port2.png' %}" alt=""></a>
+                <div class="links">
+                    <a href="{% url 'VerPortfolio2' %}"><i class="bi bi-eye"></i> Ver</a>
+                    <a href="{% url 'portfolio_Two' %}"><i class="bi bi-pencil"></i> Criar</a>
+                </div>
+            </div>
+
+            <div class="template-box">       
+                <a><img src="{% static 'img/Portfolio3.png' %}" alt=""></a>
+                <div class="links">
+                    <a href="{% url 'VerPortfolio3' %}"><i class="bi bi-eye"></i> Ver</a>
+                    <a href="{% url 'portfolio-thre' %}"><i class="bi bi-pencil"></i> Criar</a>
+                </div>
+            </div>
+            
+            <div class="template-box">
+                <a><img src="{% static 'img/template1.png' %}" alt=""></a>
+                <div class="links">
+                    <a href="{% url 'VerPortfolio1' %}"><i class="bi bi-eye"></i> Ver</a>
+                    <a href="{% url 'portfolio_one' %}"><i class="bi bi-pencil"></i> Criar</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    {% endblock %}
+    {% block js %}
+    <script src="{% static 'js/indexx.js' %}"></script>
+    {% endblock %}
+</body>
+</html>

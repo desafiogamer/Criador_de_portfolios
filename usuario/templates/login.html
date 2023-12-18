@@ -1,0 +1,34 @@
+{% extends 'index.html' %}
+{% load static %}
+
+{% block inicio %}
+<a href="{% url 'index' %}">Inicio</a>
+{% endblock %}
+
+{% block template %}
+<a href="http://127.0.0.1:8000/#template">Templates</a>
+{% endblock %}
+
+{% block logo %}
+<h1 class="logo"><span><i class="bi bi-box-arrow-in-right"></i></span></h1>
+{% endblock %}
+
+{% block conteudo %}
+<section class="registrar">
+    <div class="login-content">
+        <div class="login-box">
+            <h1>Create<span>Port</span></h1>
+            <p>Crie Portfólios online e gratis!!</p>
+            <h3>Faça seu login</h3>
+        </div>
+        <form action="" method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <div class="btn-form">
+                <button type="submit">Entrar</button>
+                <a href="{% url 'registrar' %}">Cadastre-se</a>
+            </div>
+        </form>
+    </div>  
+</section>
+{% endblock %}

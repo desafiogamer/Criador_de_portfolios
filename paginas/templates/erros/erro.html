@@ -1,0 +1,22 @@
+{% extends 'index.html' %}
+{% load static %}
+
+{% block inicio %}
+<a href="{% url 'index' %}">Inicio</a>
+{% endblock %}
+
+{% block template %}
+<a href="http://127.0.0.1:8000/#template">Templates</a>
+{% endblock %}
+
+{% block logo %}
+<h1 class="logo">Create<span>Port</span></h1>
+{% endblock %}
+
+{% block conteudo %}
+<section class="registrar">
+    <div class="login-content">
+        <h1 class="erro">Este modelo de template ja existe!</h1>
+    </div>
+</section>
+{% endblock %}

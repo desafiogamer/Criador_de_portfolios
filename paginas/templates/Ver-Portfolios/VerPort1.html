@@ -1,0 +1,277 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portifólio | João vitor</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="{% static 'css/stylesVerOne.css' %}">
+</head>
+
+<body>
+    <header id="header" class="header">
+        <a href="#" class="logo"><i class="bi bi-person-circle"></i><span>
+                <</span> João. <span>/></span></a>
+
+        <div class="bi bi-list" id="menu-icon"></div>
+
+        <nav id="nav" class="navbar">
+            <a href="#home" class="active">Inicio</a>
+            <a href="#about">Sobre</a>
+            <a href="#portifolio">Projetos</a>
+            <a href="#skills">Habilidades</a>
+            <a href="#contact">Contato <span>{ }</span></a>
+            <span class="active-nav"></span>
+        </nav>
+    </header>
+    <section class="home show-animate" id="home">
+        <div class="btnVoltar">
+            <a href="{% url 'index' %}"><button>Voltar</button></a>
+        </div>
+        <div class="home-content">
+            <div class="separacao">
+                <h1>Olá, sou</h1>
+                <div class="text-animate">
+                    <h3>Developer Fullstack</h3>
+                </div>
+
+                <p>Quos saepe, suscipit dolore eius consequatur ducimus repudiandae laudantium veritatis laborum perspiciatis earum adipisci officiis labore odio vitae!</p>
+            </div>
+            <div class="home-sci">
+                <a href="#"><i class="bi bi-linkedin"></i></a>
+                <a href="#"><i class="bi bi-github"></i></a>
+                <a href="#"><i class="bi bi-instagram"></i></a>
+                <span class="circle-spin"></span>
+            </div>
+            <div class="linha-pai">
+                <span class="linha"></span>
+                <span class="linha"></span>
+                <span class="linha"></span>
+                <span class="linha"></span>
+                <div class="btn-box btns">
+                    <a href="#"class="btn">Baixar CV</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="about" id="about">
+        <h2 class="heading">Sobre <span>mim( )</span></h2>
+
+        <div class="liga-pai">
+            <span class="liga"></span>
+            <span class="liga"></span>
+        </div>
+
+        <div class="about-img">
+            <img src="{% static 'img/foto-perfil.jpg' %}" alt="">
+            <span class="circle-spin"></span>
+        </div>
+        <div class="about-content">
+            <h3><span>{</span>Developer Fullstack<span>}</span></h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit molestiae dicta ut? Aliquam ab est, ipsum officiis unde hic sunt quibusdam ipsam non. Fuga obcaecati officiis ex temporibus nostrum corporis.
+            Temporibus, nemo provident unde, voluptatibus iusto officiis esse praesentium amet quibusdam ullam, magnam odit harum reiciendis incidunt cum. Mollitia, corrupti. Nostrum et, quaerat modi placeat id iure corporis illum? Fugit?</p>
+        </div>
+    </section>
+
+    <section class="portifolio" id="portifolio">
+        <h2 class="heading">Meus <span>Projetos( )</span></h2>
+        <div id="esconde" class="portifolio-container">
+            <div class="portifolio-box">
+                <img src="{% static 'img/loja_carro.png' %}" alt="">
+                <div class="portifolio-layer">
+                    <h4>Full<span>Stack</span></h4>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Harum error, numquam dolor eos doloribus</p>
+                    <a href="#"><i class="bi bi-box-arrow-up-right"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="portifolio-container">
+            <div class="portifolio-box">
+                <img src="{% static 'img/projeto1.png' %}" alt="">
+                <div class="portifolio-layer">
+                    <h4>Full<span>Stack</span></h4>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Harum error, numquam dolor eos doloribus</p>
+                    <a href="#"><i class="bi bi-box-arrow-up-right"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="portifolio-container">
+            <div class="portifolio-box">
+                <img src="{% static 'img/site-god3.png' %}" alt="">
+                <div class="portifolio-layer">
+                    <h4>Front<span>End</span></h4>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Harum error, numquam dolor eos doloribus</p>
+                    <a href="#"><i class="bi bi-box-arrow-up-right"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="portifolio-container">
+            <div class="portifolio-box">
+                <img src="{% static 'img/berserk.png' %}" alt="">
+                <div class="portifolio-layer">
+                    <h4>Full<span>Stack</span></h4>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Harum error, numquam dolor eos doloribus</p>
+                    <a href="#"><i class="bi bi-box-arrow-up-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="skills" id="skills">
+        <h2 class="heading">Habili<span>dades( )</span></h2>
+        <div class="pista">
+            <div class="carro">
+                <div class="molde">
+                    <div class="farol"></div>
+                </div>
+                <div class="teto">
+                    <div class="janela"></div>
+                </div>
+                <div class="roda1">
+                    <div class="aro1"></div>
+                    <div class="aro2"></div>
+                </div>
+                <div class="roda2">
+                    <div class="aro3"></div>
+                    <div class="aro4"></div>
+                </div>
+                <div class="porta">
+                    <div class="macaneta"></div>
+                </div>
+                <div class="luz"></div>
+            </div>
+        </div>
+
+        <div class="container experience_container">
+            <div class="experience_frontend">
+                <h3>Habilidades Front-End</h3>
+
+                <div class="experience_content">
+                    <article class="experience_details">
+                        <img src="{% static 'img/html-5.png' %}" alt="">
+                        <div>
+                            <h4>HTML</h4>
+                            <small class="text-light">Experiente</small>
+                        </div>
+                    </article>
+                    <article class="experience_details">
+                        <img src="{% static 'img/css.png' %}" alt="">
+                        <div>
+                            <h4>CSS</h4>
+                            <small class="text-light">Experiente</small>
+                        </div>
+                    </article>
+                    <article class="experience_details">
+                        <img src="{% static 'img/javascript-50.png' %}" alt="">
+                        <div>
+                            <h4>JavaScript</h4>
+                            <small class="text-light">Intermediario</small>
+                        </div>
+                    </article>
+                    <article class="experience_details">
+                        <img src="{% static 'img/bootstrap.png' %}" alt="">
+                        <div>
+                            <h4>Bootstrap</h4>
+                            <small class="text-light">Básico</small>
+                        </div>
+                    </article>
+                    <article class="experience_details">
+                        <img src="{% static 'img/jquery.png' %}" alt="">
+                        <div>
+                            <h4>Jquery</h4>
+                            <small class="text-light">Básico</small>
+                        </div>
+                    </article>
+                </div>
+            </div>
+
+            <div class="experienc_backend">
+                <h3>Habilidades Back-End</h3>
+                <div class="experience_content">
+                    <article class="experience_details">
+                        <img src="{% static 'img/python.png' %}" alt="">
+                        <div>
+                            <h4>Python</h4>
+                            <small class="text-light">Experiente</small>
+                        </div>
+                    </article>
+                    <article class="experience_details">
+                        <img src="{% static 'img/django-icon.png' %}" alt="">
+                        <div>
+                            <h4>Django</h4>
+                            <small class="text-light">Experiente</small>
+                        </div>
+                    </article>
+                    <article class="experience_details">
+                        <img src="{% static 'img/mysql-24.png' %}" alt="">
+                        <div>
+                            <h4>MySQL</h4>
+                            <small class="text-light">Intermediario</small>
+                        </div>
+                    </article>
+                </div>
+            </div>
+
+    </section>
+    
+    <section class="contact" id="contact">
+        <h2 class="heading">Entre em <span>Contato <i class="bi bi-envelope-at"></i></span></h2>
+        <form id="contact-form" action="#" role="form" required>
+            {% csrf_token %}
+            <div class="input-box">
+                <div class="input-field">
+                    <input id="nome" type="text" name="nome" placeholder="Nome completo" required>
+                </div>
+
+                <div class="input-field">
+                    <input id="email" type="email" name="email" placeholder="Endereço de email" required>
+                </div>
+            </div>
+
+            <div class="input-box">
+                <div class="input-field">
+                    <input id="telefone" type="text" name="telefone" placeholder="Numero de telefone" required>
+                </div>
+
+                <div class="input-field">
+                    <input id="assunto_email" type="text" name="assunto_email" placeholder="Assunto do email" required>
+                </div>
+            </div>
+
+            <div class="textarea-field">
+                <textarea name="assunto" id="assunto" cols="30" rows="10" placeholder="Sua menssagem"
+                    required></textarea>
+            </div>
+
+            <div class="btn-box btns">
+                <button type="submit" class="btn">Enviar</button>
+            </div>
+
+        </form>
+    </section>
+    <footer class="footer">
+        <div class="footer-text">
+            <p>©Site desenvolvido por João vitor gentil da silva</p>
+        </div>
+
+        <div class="footer-iconTop">
+            <a class="bi bi-arrow-up" href="#home"></a>
+        </div>
+    </footer>
+    <script src="{% static 'js/portifolio1/scroll.js' %}"></script>
+    <script src="{% static 'js/portifolio1/header-marcação.js' %}"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.js"></script>
+    <script>
+        $('#telefone').mask('(00) 0 0000-0000')
+    </script>
+</body>
+
+</html>

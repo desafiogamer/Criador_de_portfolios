@@ -1,0 +1,517 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólio | {{ user }}</title>
+    <link rel="stylesheet" href="{% static 'css/style-portfolioThre.css' %}">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.6/gsap.min.js"></script>
+    <style type="text/css">
+        ::-webkit-scrollbar{
+            
+            color:{{ obj.CorSecundaria }};
+        }
+        ::-webkit-scrollbar-thumb {
+            background: {{ obj.CorSecundaria }}; 
+        }
+        
+        #breaker{
+            background-color: {{ obj.CorSecundaria }};
+        }
+        .color{
+            color: {{ obj.CorSecundaria }};
+        }
+        #about-content a{
+            color:{{ obj.CorSecundaria }} ;
+        }
+        .cv a button{
+            background: {{ obj.CorSecundaria }};
+        }
+        .service-img img{
+            background: {{ obj.CorSecundaria }};
+            box-shadow:0px 0px 0px 0px {{ obj.CorSecundaria }} ;
+        }
+        .service:hover .service-img img{
+            box-shadow:0px 0px 0px 400px {{ obj.CorSecundaria }} ;
+        }
+        .html-progress{
+            background: {{ obj.CorSecundaria }};
+            width: {{ obj.porcento1 }}%;
+        }
+        .js-progress{
+            background: {{ obj.CorSecundaria }};
+            width: {{ obj.porcento2 }}%;
+        }
+        .adobe-progress{
+            background: {{ obj.CorSecundaria }};
+            width: {{ obj.porcento3 }}%;
+        }
+        .php-progress{
+            background: {{ obj.CorSecundaria }};
+            width: {{ obj.porcento4 }}%;
+        }
+        .jquery-progress{
+            background: {{ obj.CorSecundaria }};
+            width: {{ obj.porcento5 }}%;
+        }
+        .seo-progress{
+            background: {{ obj.CorSecundaria }};
+            width: {{ obj.porcento6 }}%;
+        }
+        .portfolio-text h2{
+            color: {{ obj.CorSecundaria }};
+        }
+        .portfolio-text button{
+            color: {{ obj.CorSecundaria }};
+            border: 1.5px solid {{ obj.CorSecundaria }};
+        }
+        .portfolio-text button::before{
+            background: {{ obj.CorSecundaria }};
+        }
+        .portfolio-image img::before{
+            background: {{ obj.CorSecundaria }};
+        }
+        .blog-date{
+            background: {{ obj.CorSecundaria }};
+        }
+        form button{
+            background: {{ obj.CorSecundaria }};
+        }
+        @media all and (max-width: 550px) and (min-width: 5px){
+            .service:hover .service-img img{
+                box-shadow:0px 0px 0px 0px {{ obj.CorSecundaria }} ;
+            }
+        }
+        #header {
+            background: {{ obj.CorDoFundo }};
+        }
+
+        #about {
+            background-color: {{ obj.CorDoFundo }};
+        }
+
+        .portfolio {
+            background-color: {{ obj.CorDoFundo }};
+        }
+
+        .portfolio-header {
+            background-color: {{ obj.CorDoFundo }};
+        }
+
+        .contact {
+            background-color: {{ obj.CorDoFundo }};
+        }
+
+        #contact{
+            background-color: {{ obj.CorDoFundo }};
+        }
+
+        .service {
+            background-color: {{ obj.CorSecundaria }};
+        }
+
+        .html-prog {
+            background: {{ obj.CorSecundaria }}; 
+        }
+
+        .portfolio-text {
+            background: {{ obj.CorSecundaria }};
+        }
+
+    </style>
+</head>
+
+<body>
+    <div id="all">
+        <div class="cursor"></div>
+        <div id="loader" style="color: {{ obj.CorPrimaria }};">
+            {{ obj.nome }}
+        </div>
+        <div id="breaker"></div>
+        <div id="breaker-two"></div>
+        <div id="navigation-content">
+            <div class="logo"><img src="{{ obj.logo.url }}" alt="logo"></div>
+
+            <div class="navigation-close">
+                <span class="close-first"></span>
+                <span class="close-second"></span>
+            </div>
+
+            <div class="navigation-links">
+                <a href="#" data-text="INICIO" id="home-link">Inicio</a>
+                <a href="#" data-text="SOBRE" id="about-link">Sobre</a>
+                <a href="#" data-text="PROJETOS" id="portfolio-link">Projetos</a>
+                <a href="#" data-text="CONTATO" id="contact-link">Contato</a>
+            </div>
+        </div>
+
+        <div id="navigation-bar">
+            <img src="{{ obj.logo.url }}" alt="logo">
+            <div class="menubar">
+                <span class="first-span"></span>
+                <span class="second-span"></span>
+                <span class="third-span"></span>
+            </div>
+        </div>
+
+        <div id="header" style="height: auto;">
+            <div id="particles"></div>
+            <div class="social-media-links">
+                <a href="{{ obj.instagran }}"><img src="{% static 'img/imgs-Portfolio3/instagram logo.png' %}" class="social-media"
+                        alt="instagram-logo"></a>
+                <a href="{{ obj.linkdin }}"><img src="{% static 'img/imgs-Portfolio3/linkedin logo.png' %}" class="social-media"
+                        alt="linkedin-logo"></a>
+                <a href="{{ obj.github }}"><img src="{% static 'img/imgs-Portfolio3/twitter logo.png' %}" class="social-media"
+                        alt="twitter-logo"></a>
+            </div>
+            <div class="header-content">
+                <div class="header-content-box">
+                    <div class="firstline" style="color: {{ obj.CorPrimaria }};">{{ obj.nome }}</div>
+                    <div class="secondline" style="color: {{ obj.CorPrimaria }};">Eu sou
+                        <span class="txt-rotate color" data-period="1200"
+                            data-rotate='[ "Desenvolvedor", " {{ obj.desenvolvedor }}" ]'></span>
+                        <span class="slash">|</span>
+                    </div>
+                    <div class="contact">
+                        <a href="Mailto:{{ obj.email }}"><img src="{% static 'img/imgs-Portfolio3/mail.png' %}"
+                                alt="email-pic" class="contactpic"></a>
+                        <a href="Tel:{{ obj.telefone }}"><img src="{% static 'img/imgs-Portfolio3/call.png' %}" alt="phone-pic"
+                                class="contactpic"></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="header-image">
+                <img src="{{ obj.ImagemDePerfil.url }}" alt="logo">
+            </div>
+        </div>
+        <div id="about">
+            <div class="color-changer">
+                <div class="color-panel">
+                    <img src="{% static 'img/imgs-Portfolio3/engrenagem.png' %}" alt="">
+                </div>
+                <div class="color-selector">
+                    <div class="heading">Customiza Cores</div>
+                    <div class="colors">
+                        <ul>
+                            <li><a href="#0" class="color-red " title="color-red"></a></li>
+                            <li><a href="#0" class="color-purple" title="color-purple"></a></li>
+                            <li><a href="#0" class="color-malt" title="color-malt"></a></li>
+                            <li><a href="#0" class="color-green" title="color-green"></a></li>
+                            <li><a href="#0" class="color-blue" title="color-blue"></a></li>
+                            <li><a href="#0" class="color-orange" title="color-orange"></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div id="about-content">
+                <div class="about-header" style="color: {{ obj.CorPrimaria }};">
+                    Sobre <span class="color">Mim</span>
+                    <span class="header-caption" style="color: {{ obj.CorPrimaria }};">Conheça-<span class="color"> me.</span></span>
+                </div>
+                <div class="about-main">
+                    <div class="about-first-paragraph wow">
+                        <span class="about-first-line" style="color: {{ obj.CorPrimaria }};">Olá sou <span class="color">{{ obj.nome }} </span>Moro em {{ obj.cidade }}
+                        </span>
+                        <br>
+                        <span class="about-second-line" style="color: {{ obj.CorPrimaria }};">
+                            {{ obj.SobreVoce }}
+                        </span>
+                        <div class="cv">
+                            <a href="{{ obj.curriculo }}"><button>Download <span class="colors">CV</span></button></a>
+                        </div>
+                    </div>
+                    <div class="about-img">
+                        <img src="{{ obj.ImagemSobreVoce.url }}" alt="Your Image">
+                    </div>
+                </div>
+            </div>
+
+            <div id="services">
+                <div class="color-changer">
+                    <div class="color-panel">
+                        <img src="{% static 'img/imgs-Portfolio3/engrenagem.png' %}" alt="">
+                    </div>
+                    <div class="color-selector">
+                        <div class="heading">Customizar Cores</div>
+                        <div class="colors">
+                            <ul>
+                                <li><a href="#0" class="color-red " title="color-red"></a></li>
+                                <li><a href="#0" class="color-purple" title="color-purple"></a></li>
+                                <li><a href="#0" class="color-malt" title="color-malt"></a></li>
+                                <li><a href="#0" class="color-green" title="color-green"></a></li>
+                                <li><a href="#0" class="color-blue" title="color-blue"></a></li>
+                                <li><a href="#0" class="color-orange" title="color-orange"></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="services-heading wow" style="color: {{ obj.CorPrimaria }};"><span class="color">Meus</span> Serviços</div>
+
+                <div class="services-content">
+                    <div class="service-one service wow">
+                        <div class="service-img">
+                            <img src="{% static 'img/imgs-Portfolio3/coding.png' %}" alt="service-one">
+                        </div>
+                        <div class="service-description">
+                            <h2 style="color: {{ obj.CorPrimaria }};">Web Design</h2>
+                            <p style="color: {{ obj.CorPrimaria }};">{{ obj.SobreDesigner }}</p>
+                        </div>
+                    </div>
+
+                    <div class="service-two service wow">
+                        <div class="service-img">
+                            <img src="{% static 'img/imgs-Portfolio3/instagram.png' %}" alt="service-two">
+                        </div>
+                        <div class="service-description">
+                            <h2 style="color: {{ obj.CorPrimaria }};">Mídia Social</h2>
+                            <p style="color: {{ obj.CorPrimaria }};">{{ obj.SobreSocial }}</p>
+                        </div>
+                    </div>
+
+                    <div class="service-three service wow">
+                        <div class="service-img">
+                            <img src="{% static 'img/imgs-Portfolio3/bulb.png' %}" alt="service-three">
+                        </div>
+                        <div class="service-description">
+                            <h2 style="color: {{ obj.CorPrimaria }};">Design criativo</h2>
+                            <p style="color: {{ obj.CorPrimaria }};">{{ obj.SobreCreativo }}</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div id="skills">
+                <div class="skills-header" style="color: {{ obj.CorPrimaria }};">Minhas <span class="color"> Habilidades</span></div>
+                <div class="skills-content " style="text-align: center;">
+
+                    <div class="skill-html skill">
+                        <div class="skill-text">
+                            <div class="html" style="color: {{ obj.CorPrimaria }};">{{ obj.linguagen1 }}</div>
+                        </div>
+                        <div class="html-prog wow prog">
+                            <div class="html-progress wow">{{ obj.porcento1 }}%</div>
+                        </div>
+                    </div>
+
+                    <div class="skill-html skill">
+                        <div class="skill-text">
+                            <div class="html" style="color: {{ obj.CorPrimaria }};">{{ obj.linguagen2 }}</div>
+                        </div>
+                        <div class="html-prog wow prog">
+                            <div class="js-progress wow">{{ obj.porcento2 }}%</div>
+                        </div>
+                    </div>
+
+                    <div class="skill-html skill">
+                        <div class="skill-text">
+                            <div class="html" style="color: {{ obj.CorPrimaria }};">{{ obj.linguagen3 }}</div>
+                        </div>
+                        <div class="html-prog wow prog">
+                            <div class="adobe-progress wow">{{ obj.porcento3 }}%</div>
+                        </div>
+                    </div>
+
+                    <div class="skill-html skill">
+                        <div class="skill-text">
+                            <div class="html" style="color: {{ obj.CorPrimaria }};">{{ obj.linguagen4 }}</div>
+                        </div>
+                        <div class="html-prog wow prog">
+                            <div class="php-progress wow">{{ obj.porcento4 }}%</div>
+                        </div>
+                    </div>
+
+                    <div class="skill-html skill">
+                        <div class="skill-text">
+                            <div class="html" style="color: {{ obj.CorPrimaria }};">{{ obj.linguagen5 }}</div>
+                        </div>
+                        <div class="html-prog wow prog">
+                            <div class="jquery-progress wow">{{ obj.porcento5 }}%</div>
+                        </div>
+                    </div>
+
+                    <div class="skill-html skill">
+                        <div class="skill-text">
+                            <div class="html" style="color: {{ obj.CorPrimaria }};">{{ obj.linguagen6 }}</div>
+                        </div>
+                        <div class="html-prog wow prog">
+                            <div class="seo-progress wow">{{ obj.porcento6 }}%</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer">
+                <div class="footer-text"><img src="{% static 'img/imgs-Portfolio3/copyright.png' %}" alt="copyright-img"
+                        class="images" height="14px">{{ obj.nome }}</div>
+            </div>
+        </div>
+
+        <div id="portfolio">
+            <div class="color-changer">
+                <div class="color-panel">
+                    <img src="{% static 'img/imgs-Portfolio3/engrenagem.png' %}" alt="">
+                </div>
+
+                <div class="color-selector">
+                    <div class="heading">Customizar Cores</div>
+                    <div class="colors">
+                        <ul>
+                            <li><a href="#0" class="color-red " title="color-red"></a></li>
+                            <li><a href="#0" class="color-purple" title="color-purple"></a></li>
+                            <li><a href="#0" class="color-malt" title="color-malt"></a></li>
+                            <li><a href="#0" class="color-green" title="color-green"></a></li>
+                            <li><a href="#0" class="color-blue" title="color-blue"></a></li>
+                            <li><a href="#0" class="color-orange" title="color-orange"></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="portfolio-header" style="color: {{ obj.CorPrimaria }};"> <span class="color"> Meus </span> Projetos
+                <span class="header-caption" style="color: {{ obj.CorPrimaria }};"> Algun dos meus <span class="color"> Trabalhos</span></span>
+            </div>
+
+            <div id="portfolio-content">
+                <div class="portfolio portfolio-first">
+                    <div class="portfolio-image">
+                        <img src="{{ obj.imagemProjeto1.url }}" alt="portfolio-first">
+                    </div>
+
+                    <div class="portfolio-text">
+                        <h2 >{{ obj.titulo1 }}</h2>
+                        <p style="color: {{ obj.CorPrimaria }};">{{ obj.DescricaoProjeto1 }}</p>
+                        <div class="button"><a href="{{ obj.LinkProjeto1 }}"><button><span class="index"> Ver projeto<i class="gg-arrow-right"></i></span></button></a></div>
+                    </div>
+                </div>
+
+                <div class="portfolio portfolio-second">
+                    <div class="portfolio-image">
+                        <img src="{{ obj.imagemProjeto2.url }}" alt="portfolio-second">
+                    </div>
+                    <div class="portfolio-text">
+                        <h2>{{ obj.titulo2 }}</h2>
+                        <p style="color: {{ obj.CorPrimaria }};">{{ obj.DescricaoProjeto2 }}</p>
+                        <div class="button"><a href="{{ obj.LinkProjeto2 }}"><button><span class="index"> Ver projeto<i class="gg-arrow-right"></i></span></button></a></div>
+                    </div>
+                </div>
+
+                <div class="portfolio portfolio-third">
+                    <div class="portfolio-image">
+                        <img src="{{ obj.imagemProjeto3.url }}" alt="portfolio-third">
+                    </div>
+                    <div class="portfolio-text">
+                        <h2>{{ obj.titulo3 }}</h2>
+                        <p style="color: {{ obj.CorPrimaria }};">{{ obj.DescricaoProjeto3 }}</p>
+                        <div class="button"><a href="{{ obj.LinkProjeto3 }}"><button><span class="index"> Ver projeto<i class="gg-arrow-right"></i></span></button></a></div>
+                    </div>
+                </div>
+                <div class="portfolio portfolio-fourth">
+                    <div class=" portfolio-image">
+                        <img src="{{ obj.imagemProjeto4.url }}" alt="portfolio-fourth">
+                    </div>
+                    <div class="portfolio-text">
+                        <h2>{{ obj.titulo4 }}</h2>
+                        <p style="color: {{ obj.CorPrimaria }};">{{ obj.DescricaoProjeto4 }}</p>
+                        <div class="button"><a href="{{ obj.LinkProjeto4 }}"><button><span class="index"> Ver projeto<i class="gg-arrow-right"></i></span></button></a></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer">
+                <div class="footer-text">
+                    <img src="{% static 'img/imgs-Portfolio3/copyright.png' %}" alt="copyright-img" class="images"
+                        height="14px"> {{ obj.nome }}
+                </div>
+            </div>
+        </div>
+
+
+        <div id="contact">
+            <div class="color-changer">
+                <div class="color-panel"><img src="{% static 'img/imgs-Portfolio3/engrenagem.png' %}" alt=""></div>
+                <div class="color-selector">
+                    <div class="heading">Customizar cores</div>
+                    <div class="colors">
+                        <ul>
+                            <li><a href="#0" class="color-red " title="color-red"></a></li>
+                            <li><a href="#0" class="color-purple" title="color-purple"></a></li>
+                            <li><a href="#0" class="color-malt" title="color-malt"></a></li>
+                            <li><a href="#0" class="color-green" title="color-green"></a></li>
+                            <li><a href="#0" class="color-blue" title="color-blue"></a></li>
+                            <li><a href="#0" class="color-orange" title="color-orange"></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="contact-header" style="color: {{ obj.CorPrimaria }};">Contate-<span class="color">Me</span>
+                <div class="contact-header-caption" style="color: {{ obj.CorPrimaria }};"> <span class="color"> Entrar em</span> contato.</div>
+            </div>
+
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-info-header" style="color: {{ obj.CorPrimaria }};">Informações de contato</div>
+                    <div class="contact-info-content">
+                        <div class="contect-info-content-line">
+                            <img src="{% static 'img/imgs-Portfolio3/icon-name.png' %}" class="icon" alt="name-icon">
+                            <div class="contact-info-icon-text">
+                                <h6 style="color: {{ obj.CorPrimaria }};">Nome</h6>
+                                <p style="color: {{ obj.CorPrimaria }};">{{ obj.nome }}</p>
+                            </div>
+                        </div>
+
+                        <div class="contect-info-content-line">
+                            <img src="{% static 'img/imgs-Portfolio3/icon-location.png' %}" class="icon"
+                                alt="location-icon">
+                            <div class="contact-info-icon-text">
+                                <h6 style="color: {{ obj.CorPrimaria }};">Localização</h6>
+                                <p style="color: {{ obj.CorPrimaria }};">{{ obj.localizacaoVoce }}</p>
+                            </div>
+                        </div>
+
+                        <div class="contect-info-content-line">
+                            <img src="{% static 'img/imgs-Portfolio3/icon-phone.png' %}" class="icon" alt="phone-icon">
+                            <div class="contact-info-icon-text">
+                                <h6 style="color: {{ obj.CorPrimaria }};">Telefone</h6>
+                                <p style="color: {{ obj.CorPrimaria }};">{{ obj.telefone }}</p>
+                            </div>
+                        </div>
+
+                        <div class="contect-info-content-line">
+                            <img src="{% static 'img/imgs-Portfolio3/icon-email.png' %}" class="icon" alt="email-icon">
+                            <div class="contact-info-icon-text">
+                                <h6 style="color: {{ obj.CorPrimaria }};">Email</h6>
+                                <p style="color: {{ obj.CorPrimaria }};">{{ obj.email }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer">
+                <div class="footer-text">
+                    <img src="{% static 'img/imgs-Portfolio3/copyright.png' %}" alt="copyright-img" class="images"
+                        height="14px"> {{ obj.nome }}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="{% static 'js/portifolio3/jquery.min.js' %}"></script>
+    <script src="{% static 'js/portifolio3/particles.js' %}"></script>
+    <script src="{% static 'js/portifolio3/particles.min.js' %}"></script>
+    <script src="{% static 'js/portifolio3/index1.js' %}"></script>
+
+    <script>
+        particlesJS("particles", { "particles": { "number": { "value": 40, "density": { "enable": true, "value_area": 800 } }, "color": { "value": "#ffffff" }, "shape": { "type": "circle", "stroke": { "width": 0, "color": "#000000" }, "polygon": { "nb_sides": 5 }, "image": { "src": "img/github.svg", "width": 100, "height": 100 } }, "opacity": { "value": 0.5, "random": false, "anim": { "enable": false, "speed": 1, "opacity_min": 0.1, "sync": false } }, "size": { "value": 3, "random": true, "anim": { "enable": false, "speed": 40, "size_min": 0.1, "sync": false } }, "line_linked": { "enable": true, "distance": 150, "color": "#ffffff", "opacity": 0.4, "width": 1 }, "move": { "enable": true, "speed": 6, "direction": "none", "random": false, "straight": false, "out_mode": "out", "bounce": false, "attract": { "enable": false, "rotateX": 600, "rotateY": 1200 } } }, "interactivity": { "detect_on": "canvas", "events": { "onhover": { "enable": true, "mode": "repulse" }, "onclick": { "enable": true, "mode": "push" }, "resize": true }, "modes": { "grab": { "distance": 400, "line_linked": { "opacity": 1 } }, "bubble": { "distance": 400, "size": 40, "duration": 2, "opacity": 8, "speed": 3 }, "repulse": { "distance": 200, "duration": 0.4 }, "push": { "particles_nb": 4 }, "remove": { "particles_nb": 2 } } }, "retina_detect": true });
+    </script>
+
+</body>
+
+</html>
