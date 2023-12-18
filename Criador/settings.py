@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-%j-6iu!pm^e!8hyyic#%-%popev+izg01h_b(-2#+voew&(cr2
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['www.desafiogamer.online']
 
 
 # Application definition
@@ -82,23 +82,23 @@ WSGI_APPLICATION = 'Criador.wsgi.application'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
 
-DATABASES = {
-   'default': {
-       'ENGINE': 'django.db.backends.postgresql',
-       'NAME': 'postgres',
-       'USER': 'postgres',
-       'PASSWORD': 'desafiogamer',
-       'HOST': 'localhost',
-       'PORT': '5432',
-   }
-}
-
 #DATABASES = {
- #   'default': {
-  #      'ENGINE': 'django.db.backends.sqlite3',
-   #     'NAME': BASE_DIR / 'db.sqlite3',
-    #}
+ #  'default': {
+  #     'ENGINE': 'django.db.backends.postgresql',
+   #   'NAME': 'postgres',
+    #   'USER': 'postgres',
+     #  'PASSWORD': 'desafiogamer',
+      # 'HOST': 'www.desafiogamer.online',
+       #'PORT': '5432',
+   #}
 #}
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
@@ -137,7 +137,7 @@ USE_TZ = True
 STATIC_URL = 'static/'
 STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles", 'static')
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, "static") 
+    os.path.join(BASE_DIR, "static")
 ]
 
 MEDIA_URL = '/midia/'
